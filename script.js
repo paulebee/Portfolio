@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 
     profil.addEventListener('mouseover', function() {
+        clearInterval(clickMe);
         profil.style.filter = "grayscale(0)";
     });
 
@@ -67,11 +68,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
         console.log(window.innerWidth/2);
         const x = e.clientX-(window.innerWidth/2);
         const y = e.clientY;
-        // console.log(t);
+
         const imageContainer = document.querySelector('.image-container');
 
         imageContainer.style.clipPath = `circle(50px at ${x}px ${y}px)`;
         console.log(imageContainer.style.clipPath);
-
     });
+
+    let clickMe =
+        setInterval(function() {
+            profil.style.filter = "grayscale(1) drop-shadow(0 0 2rem rgb(160, 160, 160))";
+            setTimeout(function() {
+                profil.style.filter = "grayscale(1) drop-shadow(0 0 0.75rem rgb(160, 160, 160))";
+            }, 500);
+        }, 1000);
+
+
 });
