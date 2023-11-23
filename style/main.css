@@ -1,0 +1,225 @@
+
+h1,h2 {
+    font-family: 'Young Serif';
+}
+.div1 {
+    height: 16em;
+}
+.title{
+    font-size: 125px;
+    line-height: 1;
+}
+br {
+    display:block; margin-top:12px; line-height:22px;
+}
+.text-purple{
+    color: rgb(182, 39, 182); 
+}
+.text-orange{
+    color: rgb(255, 136, 25); 
+}
+
+.owl-prev, .owl-next {
+    /* width: 2px;
+    height: 100px; */
+    position: absolute;
+    top: 30%;
+    display: block !important;
+    border:0px solid rgb(54, 54, 54);
+    scale: 5;
+}
+
+.owl-prev {
+    /* width: 15px;
+    height: 100px;
+    position: absolute;
+    top: 30%; */
+    margin-left: -50px;
+}
+
+.owl-next {
+    right: -50px;  
+}
+.owl-prev i, .owl-next i {
+    transform : scale(1,6); 
+    color: #ccc;
+}
+.owl-carousel{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.page-section>.content-wrapper { display: flex; flex-basis: 100%; width: 0; }
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#profilDiv{
+    position: relative;
+}
+
+#profil, #profilBg {
+    position: absolute;
+    width: 100%;
+}
+
+#profil{
+    transition: opacity 0.4s ease-in-out;
+    top: -10em;
+    left: 10em;
+    z-index: 1;
+    width: 50%;
+}
+
+#profilBg{
+    z-index: 0;
+    top: -22em;
+    transition: opacity 0.4s ease-in-out;
+}
+
+#profilDesc{
+    position: absolute;
+    width: 50%;
+    font-size: 120%;
+    top: -6em;
+    left: 9em;
+    color: rgb(40, 40, 40);
+    z-index: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+#background {
+    transition: opacity 1.5s ease-in-out;
+    position: absolute;z-index:-100; width: 100%; left:0; top:200px
+}
+
+.hidden {
+    opacity: 0;
+}
+.btn:hover {
+    background-color: rgb(199, 199, 199);
+    color: rgb(255, 255, 255);
+}
+
+hr {
+    margin: 0 auto;
+}
+
+
+@media screen and (max-width: 1200px) {
+
+    .title{
+        font-size: 6em;
+    }
+
+    #profilBg{
+        top: -19em;
+        left: 2em;
+    }
+
+    #profilDesc{
+        font-size: 90%;
+        top: -9em;
+        left: 11em;
+    }
+}
+
+@media screen and (max-width: 990px) {
+
+    .title{
+        font-size: 5em;
+    }
+
+    #profil, #profilBg {
+        width: 120%;
+    }
+
+    #profil{
+        width: 60%;
+        top: -10em;
+        left: 7em;
+    }
+
+    #profilBg{
+        top: -18em;
+        left: 0em;
+    }
+
+    #profilDesc{
+        font-size: 80%;
+        top: -11em;
+    }
+
+    #background {
+        top:400px
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .title{
+        font-size: 4em;
+        position: relative; 
+        z-index: 2;
+    }
+
+    #profil, #profilBg {
+        width: 80%;
+        top: -35em;
+        left: 4em;
+    }
+
+    #profil{
+        width: 45%;
+        top: -28em;
+        left: 10em;
+    }
+
+    #profilBg{
+        z-index: 0;
+    }
+
+    #profilDesc{
+        font-size: 80%;
+        top: -30em;
+        left: 12em;
+    }
+}
+
+@media screen and (max-width: 500px){
+
+    .title{
+        font-size: 4em;
+    }
+
+    #profil, #profilBg, #profilDesc {
+        width: 70%;
+        display: flex;
+        justify-content: center; /* Align horizontally */
+        align-items: center; /* Align vertically */
+        left: 5em;
+    }
+
+    #profil{
+        width: 40%;
+        top: -30em;
+        left: 10em;
+    }
+
+    #profilBg{
+        z-index: 0;
+    }
+
+    #profilDesc{
+        font-size: 70%;
+        width: 40%;
+        top: -38em;
+        left: 14em;
+    }
+
+    #background {
+        width: 200%;
+    }
+}
