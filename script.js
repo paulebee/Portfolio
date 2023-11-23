@@ -28,17 +28,28 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let profilBg = document.getElementById('profilBg');
     let profilDesc = document.getElementById('profilDesc');
     let profil = document.getElementById('profil');
+    let imageContainer = document.getElementById('imageContainer');
+    let hasClicked = false;
 
-    profil.addEventListener('mouseover', function() {
+    profil.addEventListener('click', function() {
         this.classList.add('hidden');
         profilDesc.classList.remove('hidden');
+        profilBg.classList.remove('hidden');
+        hasClicked = true;
+    });
+
+    profil.addEventListener('mouseover', function() {
+        profil.style.filter = "grayscale(0)";
     });
 
     profil.addEventListener('mouseout', function() {
-        this.classList.remove('hidden');
-        background.classList.remove('hidden');
-        profilBg.classList.add('hidden');
-        profilDesc.classList.add('hidden');
+        if(hasClicked){
+            profilDesc.classList.add('hidden');
+            this.classList.remove('hidden');
+            background.classList.remove('hidden');
+            profilBg.remove();
+            imageContainer.remove();      
+        } 
     });
 
     let colorDegree = 0;
@@ -50,15 +61,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
         background.style.filter = "hue-rotate("+colorDegree+"deg)";
     });
 
-    let colorDegree2 = 0;
-    let profilSize = 50;
-    // setInterval(function(){
-    //     profilSize += 1;
-    //     if(profilSize >= 52) {
-    //         profilSize = 50;
-    //     }
-    //     profil.style.width = profilSize+"%";
-        
-    // },500);
-    
+    let profilDiv = document.getElementById('profilDiv');
+
+    document.addEventListener('mousemove', (e) => {
+        console.log(window.innerWidth/2);
+        const x = e.clientX-(window.innerWidth/2);
+        const y = e.clientY;
+        // console.log(t);
+        const imageContainer = document.querySelector('.image-container');
+
+        imageContainer.style.clipPath = `circle(50px at ${x}px ${y}px)`;
+        console.log(imageContainer.style.clipPath);
+
+    });
 });
