@@ -79,7 +79,7 @@
             <div class="item" ><div class="card border-light">
                 <img src="images/ile5.png" class="card-img-top" alt="Projet 1" >
                 <div class="card-body container">
-                    <h4 class="card-title ml-0">Ile Unity</h4>
+                    <h4 class="card-title ml-0">Projet Unity</h4>
                     <div>
                         <p>
                         <span class="text-red">DISPOSITIF INTERACTIF &nbsp;</span>
@@ -154,8 +154,8 @@
     <div class="modal fade" id="popStereo" tabindex="-1" aria-labelledby="popupArticleLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title" id="popupArticleLabel">STEREO</h1>
+                <div class="modal-header text-center">
+                    <h1 class="modal-title w-100" id="popupArticleLabel">STEREO</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -190,8 +190,8 @@
     <div class="modal fade" id="popMP" tabindex="-1" aria-labelledby="popupArticleLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="popupArticleLabel">Mono-Piano</h5>
+                <div class="modal-header text-center">
+                    <h1 class="modal-title w-100" id="popupArticleLabel">Mono-Piano</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">   
@@ -210,7 +210,10 @@
                         est jouée. Cela laisse donc à l'utilisateur une notion d'interprétation puisqu'il choisit la manière dont il 
                         joue (vitesse, intensité). 
                     </p>
-                    <img src="images/monoP1.png" class="w-100"></img>
+                    <figure class="figure text-center mt-4">
+                        <img src="images/monoP1.png" class="figure-img img-fluid rounded w-50" alt="Affichage des notes">
+                        <figcaption class="figure-caption">Affichage des notes</figcaption>
+                    </figure>
                     <p class="m-3">Pour le développement du Mono-Piano j'avais donc le code de l'ancienne application Méta-Piano 
                         pour base de travail. En plus de m'assurer que les notes soient correctement jouée lorsque
                         l'utilisateur appuie sur des touches j'ai également du m'occuper de l'affichage. Cet affichage sous la forme de 
@@ -219,19 +222,25 @@
                         personnalisation (couleur, nombres de notes affichées, largeur des notes). 
                     </p>
                     <div class="row">
-                        <img src="images/monoP2.png" class="w-25 mb-3 col"></img>
-                        <p class="m-3 col">Une nouveauté par rapport à l'ancienne version de l'application était l'ajout d'un parseur MIDI. Les 
-                        fichiers MIDI sont les fichiers utilisés pour partager des partitions musicales. L'objectif de ce parseur est de 
-                        permettre à l'utilisateur d'importer n'importe quel fichier MIDI pour pouvoir le jouer grace au Mono-Piano. 
-                        Le Mono-Piano utilisant format spécial pour pouvoir lire les partition il fallait donc que je développe un parseur
-                        transformant les fichiers MIDI en ce format. 
+                        <p class="m-3 col mt-4">Une nouveauté par rapport à l'ancienne version de l'application était l'ajout d'un parseur MIDI. Les 
+                            fichiers MIDI sont les fichiers utilisés pour partager des partitions musicales. L'objectif de ce parseur est de 
+                            permettre à l'utilisateur d'importer n'importe quel fichier MIDI pour pouvoir le jouer grace au Mono-Piano. 
+                            Le Mono-Piano utilisant format spécial pour pouvoir lire les partition il fallait donc que je développe un parseur
+                            transformant les fichiers MIDI en ce format. 
                         </p>
+                        <figure class="figure mt-4 m-3 col">
+                            <img src="images/monoP2.png" class="figure-img img-fluid rounded" alt="Résultat du parseur MIDI">
+                            <figcaption class="figure-caption">Résultat du parseur MIDI, lisible par le Mono-Piano</figcaption>
+                        </figure>
                     </div>
                     <p class="m-3">La dernière étape était d'intégrer le logiciel dans un template d'interface Mono puisque toutes les 
                         applications Mono de PUCE MUSE ont une interface similaires. En raison du temps de mon stage je n'ai malheuresement pas
                         mettre en place moi-même l'interface.  
                     </p>
-                    <img src="images/monoP3.png" class="w-100"></img>
+                    <figure class="figure text-center mt-4">
+                        <img src="images/monoP3.png" class="figure-img img-fluid rounded w-75" alt="Interface de Mono-Map">
+                        <figcaption class="figure-caption">Interface de Mono-Map, un logiciel du groupe Mono</figcaption>
+                    </figure>
                     
                 </div>
                 <div class="modal-footer">
@@ -246,18 +255,23 @@
     <div class="modal fade" id="popMotion" tabindex="-1" aria-labelledby="popupArticleLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="popupArticleLabel">Motion Design</h5>
+                <div class="modal-header text-center">
+                    <h1 class="modal-title w-100" id="popupArticleLabel">Quotidien Numérique</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <img src="images/urban1.png" class="w-100"></img>
+                    <figure class="figure text-center mt-4">
+                        <img src="images/urban1.png" class="figure-img img-fluid rounded w-75" alt="Visuel principal du site">
+                        <figcaption class="figure-caption">Visuel principal du site</figcaption>
+                    </figure>
                     <p class="m-3">Un autre projet réalisé lors de ma première année de BUT MMI était la réalisation par groupe de 4 d'un site dédié à l'innovation. Sur ce site devait figurer un motion design présentant une de ces innovation.
                         Nous avons décidés de présenter Urban Canopee qui sont des mobiliers urbains végétaux écologiques. 
                         Je me suis occupé du design du personnage principal, de celui des Urban Canopee et de celui d'un camion. J'ai également animé une partie du motion design avec After Effects.
                     </p>
-                    <img src="images/urban2.png" class="w-100 mb-3"></img>
-                    <img src="images/stereo3.png" class="w-100"></img>
+                    <figure class="figure text-center mt-4">
+                        <img src="images/urban2.png" class="figure-img img-fluid rounded w-75" alt="Extrait du motion design">
+                        <figcaption class="figure-caption">Image du motion design</figcaption>
+                    </figure>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn border" data-bs-dismiss="modal">Fermer</button>
@@ -268,12 +282,15 @@
     <div class="modal fade" id="popIle" tabindex="-1" aria-labelledby="popupArticleLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="popupArticleLabel">Projet Île Unity</h5>
+                <div class="modal-header text-center">
+                    <h1 class="modal-title w-100" id="popupArticleLabel">Projet Unity</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <img src="images/ile1.png" class="w-100"></img>
+                    <figure class="figure text-center mt-4">
+                        <img src="images/ile1.png" class="figure-img img-fluid rounded w-100" alt="Image de l'île">
+                        <figcaption class="figure-caption">L'île du projet</figcaption>
+                    </figure>
                     <p class="m-3">Réalisé lors de ma deuxième année de BUT MMI, le but de ce projet était de créer 
                         une expérience en réalité virtuelle sur une île grâce au moteur de jeu Unity. Pour cette expérience, 
                         nous devions mettre au point un scénario simple. L'objectif de mon expérience était d'empêcher 
@@ -284,7 +301,10 @@
                         faisait visiter toute l'île à l'utilisateur. Le dernier PNJ donnait lui un indice sur 
                         l'emplacement de l'enfant.
                     </p>
-                    <img src="images/ile3.png" class="w-100"></img>
+                    <figure class="figure text-center mt-4">
+                        <img src="images/ile3.png" class="figure-img img-fluid rounded w-75" alt="Ville principale">
+                        <figcaption class="figure-caption">Ville principale</figcaption>
+                    </figure>
                     <p class="m-3">Cette île était composée d'assets libres de droits disposés afin de créer 
                         un environnement cohérent et varié. L'expérience démarre dans une ville avec un château. 
                         L'utilisateur passe ensuite à travers une forêt, une petite île isolée, un désert, des 
@@ -293,17 +313,29 @@
                         un dialogue. J'ai créé moi-même le modèle d'un de ces PNJ avec le logiciel de modélisation 3D Blender.
                     </p>
                     <div class="row g-2">
-                        <img src="images/ile6.png" class="w-50"></img> 
+                        <figure class="figure text-center mt-4 col-sm">
+                            <img src="images/ile6.png" class="figure-img img-fluid rounded" alt="Image île">
+                            <figcaption class="figure-caption">Vue depuis l'île</figcaption>
+                        </figure>
                         <div class="col-sm">
-                            <img src="images/ile4.png" class="w-80"></img>
-                            <img src="images/ile8.png" class="w-80"></img>
+                            <figure class="figure text-center mt-3">
+                                <img src="images/ile4.png" class="figure-img img-fluid rounded" alt="Personnage Blender">
+                                <figcaption class="figure-caption">Personnage dans Blender</figcaption>
+                            </figure>
+                            <figure class="figure text-start col-sm">
+                                <img src="images/ile8.png" class="figure-img img-fluid rounded w-75" alt="Premier PNJ">
+                                <figcaption class="figure-caption">Premier PNJ</figcaption>
+                            </figure>
                         </div>    
                     </div>
                     <p class="m-3">N'ayant pas de casque pour réellement faire de la réalité virtuelle, 
                         j'ai utilisé mon téléphone pour pouvoir contrôler la caméra en fonction des mouvements. 
                         Une partie de l'écran permettait d'avancer.
                     </p>
-                    <img src="images/ile2.png" class="w-100 mb-3"></img>
+                    <figure class="figure text-center">
+                        <img src="images/ile2.png" class="figure-img img-fluid rounded w-75" alt="Cabane">
+                        <figcaption class="figure-caption">Vue de la forêt</figcaption>
+                    </figure>
                     
                     
                     
@@ -317,17 +349,26 @@
     <div class="modal fade" id="popToubo" tabindex="-1" aria-labelledby="popupArticleLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="popupArticleLabel">TOUBO</h5>
+                <div class="modal-header text-center">
+                    <h1 class="modal-title w-100" id="popupArticleLabel">TOUBO</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <img src="images/toubo1.png" class="w-100"></img>
+                    <figure class="figure text-center">
+                        <img src="images/toubo1.png" class="figure-img img-fluid rounded w-75" alt="Accueil Site">
+                        <figcaption class="figure-caption">Page d'accueil du site</figcaption>
+                    </figure>
                     <p class="m-3">Réalisé lors de ma deuxième année de BUT MMI, l'objectif de ce projet était de réaliser par groupe de 3 un site de prévisions et statistiques météo.</p>
-                    <img src="images/toubo2.png" class="w-100 mb-3"></img>
+                    <figure class="figure text-center">
+                        <img src="images/toubo2.png" class="figure-img img-fluid rounded w-75" alt="Dashboard">
+                        <figcaption class="figure-caption">Dashboard du site</figcaption>
+                    </figure>
                     <p class="m-3">Le but de ce projet était de créer un site responsive  récupérant des informations météorologiques en temps réel et proposant des statistiques. Pour ce faire, nous avons d'abord utilisé HTML/CSS pour créer la base du site et gérer l’affichage. Ensuite, nous avons récupéré les informations sur une ville au choix via des requêtes sur l'API de Météo France. Pour réaliser le dashboard des statistiques quotidiennes nous avons utilisés Chart.js. 
                         Je me suis principalement occupé de la réalisation et de l'intégration d'un dashborad Google Looker Studio qui permettait d'avoir des statistiques sur une période au choix..</p>
-                    <img src="images/toubo3.png" class="w-100"></img>
+                        <figure class="figure text-center">
+                            <img src="images/toubo3.png" class="figure-img img-fluid rounded w-75" alt="Wireframe">
+                            <figcaption class="figure-caption">Wireframe du site</figcaption>
+                        </figure>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn border" data-bs-dismiss="modal">Fermer</button>
@@ -338,14 +379,20 @@
     <div class="modal fade" id="popFlyers" tabindex="-1" aria-labelledby="popupArticleLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="popupArticleLabel">Flyers</h5>
+                <div class="modal-header text-center">
+                    <h1 class="modal-title w-100" id="popupArticleLabel">Flyers</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <img src="images/flyer1.png" class="w-50 ml-10 "></img>
-                        <img src="images/flyer2.png" class="w-50 "></img>
+                        <figure class="figure text-center col-sm">
+                            <img src="images/flyer1.png" class="figure-img img-fluid rounded" alt="Recto Flyer">
+                            <figcaption class="figure-caption">Présentation de Saint-Lô</figcaption>
+                        </figure>
+                        <figure class="figure text-center col-sm">
+                            <img src="images/flyer2.png" class="figure-img img-fluid rounded" alt="Verso Flyer">
+                            <figcaption class="figure-caption">Présentation du BUT MMI</figcaption>
+                        </figure>
                     </div>
                     <p class="m-3">Un autre projet réalisé lors de mon BUT MMI était la réalisation de flyers de présentation de l'IUT, de la formation ainsi que de la ville de Saint-Lô. 
                         Ces flyers en anglais ayant pour but d'attirer des élèves étrangers pour un échange universitaire. 
