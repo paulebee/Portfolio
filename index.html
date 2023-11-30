@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <title>Mon Portfolio</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -13,6 +13,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
     <link rel="stylesheet" href="style/main.css">
+    <!-- <div id="circle"></div> -->
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light mt-2"id="accueil" >
@@ -40,22 +41,29 @@
     <section class="py-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <h1 class="display-5 mt-5 title">Paul <br> Lebée</h1>
+                <div class="col flex-grow-1"></div>
+                <div class="col-4" id="profilDiv">
+                    <img src="images/profil.jpg" id="profil" class="rounded-circle"></img> 
+                    <span id="testnika">
+                        <p id="profilDesc" class="lead d-none">Actuellement étudiant en 3ème année de BUT MMI (Métiers du Multimédia et de l'Internet) à Saint-Lô, je suis à la recherche d'un stage dans 
+                            le domaine du développement informatique lié au multimédia. Vous trouverez sur ce portfolio certains de mes projets
+                            réalisés au cours de mes études.
+                        </p>   
+                        <img src="images/profilBg.png" id="profilBg" class="d-none">
+                        <!-- <div class="image-container" id="imageContainer"></div>    -->
+                    </span>      
+                </div>
+            </div>
+            <div class="row" id="welcomeTitle">
+                <div class="col">
+                    <h1 class="display-5 title">Paul <br> Lebée</h1>
                     <p class="lead">Bienvenue sur mon Portfolio</p>
                 </div>
-            <div class="col-md-6" id="profilDiv">
-                <img src="images/profil.jpg" id="profil" class="rounded-circle"></img>    
-                <img src="images/profilBg.png" id="profilBg" class="hidden ">
-                <div class="image-container" id="imageContainer"></div>         
-                <p id="profilDesc" class="lead hidden">Actuellement étudiant en 3ème année de BUT MMI (Métiers du Multimédia et de l'Internet) à Saint-Lô, je suis à la recherche d'un stage dans 
-                    le domaine du développement informatique lié au multimédia. Vous trouverez sur ce portfolio certains de mes projets
-                    réalisés au cours de mes études.
-                </p>
-                
+            </div>
+            <div class="row g-0">
+                <img src="images/background.png" id="background" class="hidden">
             </div>
         </div>
-        <img src="images/background.png" id="background" class="absolute left-0 hidden">
     </section>
 
 
@@ -151,7 +159,7 @@
         </div>
     </section>
     <section> 
-        <div class="modal fade" id="popStereo" tabindex="-1" aria-labelledby="popupArticleLabel" aria-hidden="true">
+        <div class="modal fade" id="popStereo" tabindex="-1" aria-labelledby="popupArticleLabel" aria-d-none="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header border-0 ms-3">
@@ -183,13 +191,10 @@
                             </figure>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn border" data-bs-dismiss="modal">Fermer</button>
-                    </div>
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="popMP" tabindex="-1" aria-labelledby="popupArticleLabel" aria-hidden="true">
+        <div class="modal fade" id="popMP" tabindex="-1" aria-labelledby="popupArticleLabel" aria-d-none="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header border-0 ms-3">
@@ -219,13 +224,13 @@
                                         <figcaption class="figure-caption">Affichage des notes</figcaption>
                                     </figure>
                                 </div>
-                                <p class="m-3">Pour le développement du Mono-Piano j'avais donc le code de l'ancienne application Méta-Piano 
+                                <!-- <p class="m-3">Pour le développement du Mono-Piano j'avais donc le code de l'ancienne application Méta-Piano 
                                     pour base de travail. En plus de m'assurer que les notes soient correctement jouée lorsque
                                     l'utilisateur appuie sur des touches j'ai également du m'occuper de l'affichage. Cet affichage sous la forme de 
                                     piano roll permet de voir les à suivre dans la partition. Je me suis assuré que l'affichage soit correct par rapport
                                     à la partition et qu'il réagisse correctement aux actions de l'utilisateur. J'ai également ajouté des paramètres de 
                                     personnalisation (couleur, nombres de notes affichées, largeur des notes). 
-                                </p>
+                                </p> -->
                             </div>
                             <div class="item">
                                 <p class="m-3 mt-5">Une nouveauté par rapport à l'ancienne version de l'application était l'ajout d'un parseur MIDI. Les 
@@ -235,7 +240,7 @@
                                     transformant les fichiers MIDI en ce format. 
                                 </p>
                                 <figure class="figure mt-4 m-3 justify-content-center">
-                                    <img src="images/monoP2.png" class="figure-img img-fluid rounded w-50" alt="Résultat du parseur MIDI">
+                                    <img src="images/monoP2.png" class="figure-img img-fluid rounded w-25" alt="Résultat du parseur MIDI">
                                     <figcaption class="figure-caption">Résultat du parseur MIDI, lisible par le Mono-Piano</figcaption>
                                 </figure>
                             </div>
@@ -251,16 +256,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <form action="./PaulLebee.pdf">
-                            <input type="submit" class="btn btn-primary" value="Voir le rapport de stage">
-                        </form>
-                        <button type="button" class="btn border" data-bs-dismiss="modal">Fermer</button>
-                    </div>
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="popMotion" tabindex="-1" aria-labelledby="popupArticleLabel" aria-hidden="true">
+        <div class="modal fade" id="popMotion" tabindex="-1" aria-labelledby="popupArticleLabel" aria-d-none="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header border-0 ms-3">
@@ -283,13 +282,10 @@
                             </figure>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn border" data-bs-dismiss="modal">Fermer</button>
-                    </div>
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="popIle" tabindex="-1" aria-labelledby="popupArticleLabel" aria-hidden="true">
+        <div class="modal fade" id="popIle" tabindex="-1" aria-labelledby="popupArticleLabel" aria-d-none="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header border-0 ms-3">
@@ -357,13 +353,10 @@
                             </div>
                         </div>    
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn border" data-bs-dismiss="modal">Fermer</button>
-                    </div>
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="popToubo" tabindex="-1" aria-labelledby="popupArticleLabel" aria-hidden="true">
+        <div class="modal fade" id="popToubo" tabindex="-1" aria-labelledby="popupArticleLabel" aria-d-none="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header border-0 text-start">
@@ -391,13 +384,10 @@
                             </figure>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn border" data-bs-dismiss="modal">Fermer</button>
-                    </div>
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="popFlyers" tabindex="-1" aria-labelledby="popupArticleLabel" aria-hidden="true">
+        <div class="modal fade" id="popFlyers" tabindex="-1" aria-labelledby="popupArticleLabel" aria-d-none="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header text-center">
@@ -419,9 +409,6 @@
                             Ces flyers en anglais ayant pour but d'attirer des élèves étrangers pour un échange universitaire. 
                         </p>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn border" data-bs-dismiss="modal">Fermer</button>
-                    </div>
                 </div>
             </div>
         </div>
@@ -440,6 +427,7 @@
 </body>
 
 <script src="script.js"></script>
+<!-- <script type="module" src="test.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 <script>
     tailwind.config = {

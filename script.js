@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         margin: 10,
         loop: true, 
         nav: true,
-        dots: true,
         // mouseDrag : true,
     });
     
@@ -38,51 +37,59 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let profilBg = document.getElementById('profilBg');
     let profilDesc = document.getElementById('profilDesc');
     let profil = document.getElementById('profil');
+    let profilDiv = document.getElementById('profilDiv');
+    let canvas = document.querySelector('canvas');
     let imageContainer = document.getElementById('imageContainer');
     let hasClicked = false;
 
     profil.addEventListener('click', function() {
-        this.classList.add('hidden');
-        profilDesc.classList.remove('hidden');
-        profilBg.classList.remove('hidden');
+        console.log(new Date().getSeconds());
+        this.classList.add('d-none');
+        this.classList.add('test');
+        profilDesc.classList.remove('d-none');
+        profilBg.classList.remove('d-none');
         hasClicked = true;
+        console.log(this.classList);
     });
 
     profil.addEventListener('mouseover', function() {
-        profil.style.filter = "grayscale(0)";
         clearInterval(clickMe);
-       
+        setTimeout(function() {
+            profil.style.filter = "grayscale(0)";
+        }, 500);
+        profil.style.filter = "grayscale(0)";
+        console.log('test');
+        // canvas.remove();
+        clearInterval(clickMe);
+        background.classList.add('hidden');
     });
 
-    profil.addEventListener('mouseout', function() {
+    function clearProfile() {
         if(hasClicked){
-            profilDesc.classList.add('hidden');
-            this.classList.remove('hidden');
-            background.classList.remove('hidden');
-            profilBg.remove();
-            imageContainer.remove();      
+            setTimeout(function() {
+                profilDesc.classList.add('d-none');
+                profilBg.classList.add('d-none');
+                background.classList.remove('hidden');
+                profil.classList.remove('d-none');
+                imageContainer.classList.remove('d-none');
+            }, 1000);  
+            hasClicked = false;    
         } 
-    });
+    }
+
+    profilBg.addEventListener('mouseout', clearProfile);
+    document.addEventListener('scroll', clearProfile);
 
     let colorDegree = 0;
-    // document.addEventListener('scroll', function() {
-    //     colorDegree += 5;
-    //     if(colorDegree >= 360) {
-    //         colorDegree = 0;
-    //     }
-    //     background.style.filter = "hue-rotate("+colorDegree+"deg)";
+
+    // document.addEventListener('mousemove', (e) => {
+    //     const x = e.clientX;
+    //     const y = e.clientY+290;
+    //     console.log(x,y);
+    //     const imageContainer = document.querySelector('.image-container');
+
+    //     imageContainer.style.clipPath = `circle(50px at ${x}px ${y}px)`;
     // });
-
-    let profilDiv = document.getElementById('profilDiv');
-
-    document.addEventListener('mousemove', (e) => {
-        const x = e.clientX-(window.innerWidth/2);
-        const y = e.clientY;
-
-        const imageContainer = document.querySelector('.image-container');
-
-        imageContainer.style.clipPath = `circle(50px at ${x}px ${y}px)`;
-    });
 
     
     let clickMe = setInterval(function() {
@@ -91,7 +98,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             profil.style.filter = "grayscale(1) drop-shadow(0 0 0.75rem rgb(160, 160, 160))";
         }, 500);
     }, 1000);
-    
+
     var owl = $('.owl-carousel');
     owl.owlCarousel();
 

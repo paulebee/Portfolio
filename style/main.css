@@ -3,13 +3,12 @@
 h1,h2 {
     font-family: 'Young Serif';
 }
-.div1 {
-    height: 16em;
-}
+
 .title{
     font-size: 125px;
     line-height: 1;
 }
+
 br {
     display:block; margin-top:12px; line-height:22px;
 }
@@ -27,8 +26,6 @@ br {
 }
 
 .owl-prev, .owl-next {
-    /* width: 2px;
-    height: 100px; */
     position: absolute;
     top: 30%;
     display: block !important;
@@ -64,52 +61,68 @@ body{
     padding: 0;
 }
 
-#profilDiv{
-    position: relative;
-}
-
-#profil, #profilBg {
-    position: absolute;
-    width: 100%;
-}
-
 #profil{
-    /* transition: ; */
-    top: -10em;
-    left: 10em;
     z-index: 1;
-    width: 50%;
+    width: 20em;
     cursor:pointer;
     filter: grayscale(1) drop-shadow(0 0 0.75rem rgb(160, 160, 160));
     transition: filter 0.3s ease-in-out, opacity 0.4s ease-in-out;
+    margin-left: -5em;
+    margin-top: 5em;
+}
+
+#welcomeTitle{
+    margin-top: -5em;
+    position: relative; 
+    z-index: 1;
 }
 
 #profilBg{
     z-index: 0;
-    top: -22em;
+    width: 19.7em;
+    transform: scale(2);
+    margin-top: 5em;
+    margin-left: -3em;
     transition: opacity 0.4s ease-in-out;
 }
 
 #profilDesc{
-    position: absolute;
-    width: 50%;
-    font-size: 120%;
-    top: -6em;
-    left: 9em;
+    position: relative;
+    width: 16em;    
     color: rgb(40, 40, 40);
-    z-index: 0;
+    margin-top: 5em;
+    margin-bottom: -18em;
+    margin-left: -2em;
+    z-index: 1;
     transition: opacity 0.2s ease-in-out;
 }
 
+/* .image-container {
+    z-index: -1;
+    width: 100%;
+    height: 200%;
+    background-image: url('../images/profilBg.png'); 
+    background-size: cover;
+    position: absolute;
+    top: -22em;
+    left: 0;
+    pointer-events: none; 
+    clip-path: circle(50px at 50% 50%);
+} */
+
 #background {
-    transition: opacity 1.5s ease-in-out;
-    transition: filter 0.5s ease-in-out;
-    position: absolute;z-index:-100; width: 100%; left:0; top:200px;
+    transition: opacity 1.5s ease-in-out, filter 0.5s ease-in-out; 
+    position: absolute;
+    z-index:-1; 
+    width: 100%; 
+    left:0; 
+    top:12em; 
 }
 
 .hidden {
     opacity: 0;
 }
+
 .btn:hover {
     background-color: rgb(199, 199, 199);
     color: rgb(255, 255, 255);
@@ -144,138 +157,113 @@ hr {
     font-weight: bold;
 }
 
-.image-container {
-    width: 100%;
-    height: 200%;
-    background-image: url('../images/profilBg.png'); 
-    background-size: cover;
-    position: absolute;
-    top: -22em;
-    left: 0;
-    pointer-events: none; 
-    clip-path: circle(50px at 50% 50%);
-}
-
 .owl-modal .owl-nav  .owl-prev{
     left: 1.5em;
+    top: 50%;
 }   
 
 .owl-modal .owl-nav .owl-next {
     right: -2em;
+    top: 50%;
+}
+
+.trail { /* className for the trail elements */
+    position: absolute;
+    height: 6px; width: 6px;
+    border-radius: 3px;
+    background: teal;
+    filter: blur(5px);
+}
+canvas{
+    position: absolute; 
+    z-index: -2;
+    top: 0;  
+    width: 80%;    
 }
 @media screen and (max-width: 1200px) {
 
+    html {
+        font-size: 0.8rem;
+    }
+
     .title{
-        font-size: 6em;
-    }
-
-    #profilBg{
-        top: -19em;
-        left: 2em;
-    }
-
-    #profilDesc{
-        font-size: 90%;
-        top: -9em;
-        left: 11em;
+        font-size: 8em;
     }
 
 }
 
-@media screen and (max-width: 990px) {
-
-    .title{
-        font-size: 5em;
+@media screen and (max-width: 1200px) {
+    .owl-main, .owl-modal{
+        width: 90%;
     }
-
-    #profil, #profilBg {
-        width: 120%;
-    }
-
-    #profil{
-        width: 60%;
-        top: -10em;
-        left: 7em;
-    }
-
-    #profilBg{
-        top: -18em;
-        left: 0em;
-    }
-
-    #profilDesc{
-        font-size: 80%;
-        top: -11em;
-    }
-
-    #background {
-        top:400px
+    #background{
+        margin-top: 10em;
     }
 }
 
-@media screen and (max-width: 767px) {
-
-    .title{
-        font-size: 4em;
-        position: relative; 
-        z-index: 2;
-    }
-
-    #profil, #profilBg {
-        width: 80%;
-        top: -35em;
-        left: 4em;
-    }
-
-    #profil{
-        width: 45%;
-        top: -28em;
-        left: 10em;
-    }
-
-    #profilBg{
-        z-index: 0;
-    }
-
-    #profilDesc{
-        font-size: 80%;
-        top: -30em;
-        left: 12em;
-    }
-}
-
-@media screen and (max-width: 500px){
-
-    .title{
-        font-size: 4em;
-    }
-
-    #profil, #profilBg, #profilDesc {
+@media screen and (max-width: 640px) {
+    .owl-main, .owl-modal{
         width: 70%;
-        display: flex;
-        justify-content: center; /* Align horizontally */
-        align-items: center; /* Align vertically */
-        left: 5em;
     }
 
     #profil{
-        width: 40%;
-        top: -30em;
-        left: 10em;
+        width: 12em;
+        margin-top: -2em;
     }
 
     #profilBg{
-        z-index: 0;
+        width: 13.7em;
+        margin-top: 4em;
+        margin-left: -8em;
     }
-
+    
     #profilDesc{
-        font-size: 70%;
-        width: 40%;
-        top: -38em;
-        left: 14em;
+        position: relative;
+        width: 16em;    
+        font-size: 1em;
+        margin-top: -2em;
+        margin-left: -8em;
+        
     }
 
-    #background {
-        width: 200%;
+    .title{
+        font-size: 4em;
+    }
+
+    .modal-content{
+        left: 12%;
+    }
+
+    #popupArticleLabel{
+        font-size: 3em;
+    }
+
+    .modal-body{
+        font-size: 0.75em;
+    }
+
+    .modal-content{
+        width: 150%;
+        margin-left: -12em;
+        margin-top: -2em;
+    }
+
+    .btn-close{
+        opacity: 0;
+    }
+
+    #background{
+        margin-top: -2em;
+        height: 55em;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .modal-content{
+        margin-left: -5em;
+    }
+
+    #background{
+        margin-top: 3em;
     }
 }
