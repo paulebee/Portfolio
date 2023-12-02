@@ -16,6 +16,7 @@
     <!-- <div id="circle"></div> -->
 </head>
 <body>
+    <canvas id="canvas"></canvas>
     <nav class="navbar navbar-expand-lg navbar-light mt-2"id="accueil" >
         <div class="container">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,14 +45,12 @@
                 <div class="col flex-grow-1"></div>
                 <div class="col-4" id="profilDiv">
                     <img src="images/profil.jpg" id="profil" class="rounded-circle"></img> 
-                    <span id="testnika">
-                        <p id="profilDesc" class="lead d-none">Actuellement étudiant en 3ème année de BUT MMI (Métiers du Multimédia et de l'Internet) à Saint-Lô, je suis à la recherche d'un stage dans 
-                            le domaine du développement informatique lié au multimédia. Vous trouverez sur ce portfolio certains de mes projets
-                            réalisés au cours de mes études.
-                        </p>   
-                        <img src="images/profilBg.png" id="profilBg" class="d-none">
-                        <!-- <div class="image-container" id="imageContainer"></div>    -->
-                    </span>      
+                    <p id="profilDesc" class="lead d-none">Actuellement étudiant en 3ème année de BUT MMI (Métiers du Multimédia et de l'Internet) à Saint-Lô, je suis à la recherche d'un stage dans 
+                        le domaine du développement informatique lié au multimédia. Vous trouverez sur ce portfolio certains de mes projets
+                        réalisés au cours de mes études.
+                    </p>   
+                    <img src="images/profilBg.png" id="profilBg" class="d-none">
+                    <!-- <div class="image-container" id="imageContainer"></div>    -->    
                 </div>
             </div>
             <div class="row" id="welcomeTitle">
@@ -61,7 +60,7 @@
                 </div>
             </div>
             <div class="row g-0">
-                <img src="images/background.png" id="background" class="hidden">
+                <img src="images/background2.png" id="background" class="d-none">
             </div>
         </div>
     </section>
@@ -413,14 +412,16 @@
             </div>
         </div>
     </section>
-    <hr class="hr w-75 mt-4"/>
-
-    <footer class="mb-5">
+    <hr class="hr w-100 mt-4"/>
+    <div id="blockContact"></div>
+    <footer class="mb-4">
         <section id="contact" class="mt-4">
             <div class="container text-center">
                 <h2>Contact</h2>
-                <p class="">Adresse mail : <u>p.lebee@orange.fr</u></p>
-                <a href="https://www.linkedin.com/in/paul-leb%C3%A9e-83a490233/" class="">Compte LinkedIn</a>
+                <div id="contactContent" class="lead mt-2">
+                    <p class="">Adresse mail : <u>p.lebee@orange.fr</u></p>
+                    <a href="https://www.linkedin.com/in/paul-leb%C3%A9e-83a490233/" class="">Compte LinkedIn</a>
+                </div>
             </div>
         </section>
     </footer>
