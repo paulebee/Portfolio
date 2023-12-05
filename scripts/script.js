@@ -38,14 +38,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let profilDesc = document.getElementById('profilDesc');
     let profil = document.getElementById('profil');
     let profilDiv = document.getElementById('profilDiv');
-    // let canvas = document.querySelector('canvas');
-    let imageContainer = document.getElementById('imageContainer');
     let hasClicked = false;
+    let contact = document.getElementById('contact');
     let contactContent = document.getElementById('contactContent');
+    let contactLink = document.getElementById('contactLink');
+    let contactHr = document.getElementById('contactHr');
+    let mentionsLink = document.getElementById('mentionsLink');
+    let portfolio = document.getElementById('portfolio');
+    let welcomeTitle = document.getElementById('welcomeTitle');
+    let canvas = document.getElementById("canvas");
 
-    // profil.addEventListener('click', function() {
-        
-    // });
+    welcomeTitle.style.marginTop = -5 + "em";
+    profil.style.marginTop = 5 + "em";
 
     function opacityTransition(element, way){
         if(way == 'up'){
@@ -66,13 +70,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     profil.addEventListener('mouseover', function() {
+        portfolio.classList.remove('d-none');
+        contact.classList.remove('d-none');
+        contactHr.classList.remove('d-none');
         this.classList.add('d-none');
-        this.classList.add('test'); 
         opacityTransition(profilDesc, 'up');
         opacityTransition(profilBg, 'up');
         hasClicked = true;
         clearInterval(clickMe);
         opacityTransition(background, 'down');
+        this.style.filter = "grayscale(0)";
+        canvas.classList.add('d-none');
+        setTimeout(function() {
+            canvas.classList.remove('d-none');
+            canvas.width = window.innerWidth;
+            canvas.height = document.body.scrollHeight;
+        }, 1500);
     });
 
     function clearProfile() {
@@ -92,19 +105,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     document.addEventListener('scroll', clearProfile);
 
     let colorDegree = 0;
-
-    // document.addEventListener('mousemove', (e) => {
-    //     const x = e.clientX;
-    //     const y = e.clientY+290;
-    //     console.log(x,y);
-    //     const imageContainer = document.querySelector('.image-container');
-
-    //     imageContainer.style.clipPath = `circle(50px at ${x}px ${y}px)`;
-    // });
-
     
     let clickMe = setInterval(function() {
-        console.log(profil.style.filter);
         profil.style.filter = "grayscale(1) drop-shadow(0 0 2rem rgb(160, 160, 160))";
         setTimeout(function() {
             profil.style.filter = "grayscale(1) drop-shadow(0 0 0.75rem rgb(160, 160, 160))";
@@ -115,20 +117,31 @@ document.addEventListener('DOMContentLoaded', (event) => {
     owl.owlCarousel();
 
     // Listen to owl events:
-    owl.on('changed.owl.carousel', function(event) {
-        colorDegree += 50;
-        if(colorDegree >= 360) {
-            colorDegree = 0;
+    // owl.on('changed.owl.carousel', function(event) {
+        // Function to loop through element color with CSS filter
+        async function loopElementColor() {
+            let hue = 0;
+
+            while (true) {
+                // Apply CSS filter to change hue
+                background.style.filter = `hue-rotate(${hue}deg)`;
+
+                // Increment hue for the next color
+                hue += 10;
+
+                // Pause for a moment (you can adjust the time as needed)
+                await sleep(300);
+            }
         }
-        background.style.filter = "hue-rotate("+colorDegree+"deg)";
-    })
 
-    const scrollingElement = (document.scrollingElement || document.body);
+        // Function to simulate sleep (using Promise)
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
 
-    // let scrollBottom = setTimeout(function() {
-    //     opacityTransition(contactContent, 'up');
-    //     window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-    // }, 1000);
+        // Call the function to start the color loop
+        loopElementColor();
+    // })
 
     let timeoutId;
     let endPos = document.body.scrollHeight;
@@ -137,14 +150,33 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
             // User has scrolled to the bottom of the page
             if (!timeoutId) {
-                contactContent.style.bottom = "-9em";
-                contactContent.style.opacity = "1";
-                timeoutId = setTimeout(() => {
+                contactLink.addEventListener('click', function() {
+                    if(mentionsContent.style.opacity == "1"){
+                        mentionsContent.style.bottom = "";
+                        mentionsContent.style.opacity = "0";
+                    }
+                    contactContent.style.bottom = "-8em";
+                    contactContent.style.opacity = "1";
                     timeoutId = null; 
                     endPos = document.body.scrollHeight;
-                    console.log("test1",endPos);
                     contactContent.scrollIntoView();
-                }, 0);
+                });
+                mentionsLink.addEventListener('click', function() {
+                    if(contactContent.style.opacity == "1"){
+                        contactContent.style.bottom = "";   
+                        contactContent.style.opacity = "0";
+                    }
+                    if(window.innerWidth < 575){
+                        mentionsContent.style.bottom = "-15em";
+                    }
+                    else{
+                        mentionsContent.style.bottom = "-10em";
+                    }
+                    mentionsContent.style.opacity = "1";
+                        timeoutId = null; 
+                        endPos = document.body.scrollHeight;
+                    mentionsContent.scrollIntoView();
+                });
             }
         } else {
             // User is not at the bottom of the page, clear the timeout
@@ -152,87 +184,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
             timeoutId = null;  // Reset the timeout ID
             contactContent.style.bottom = "";
             contactContent.style.opacity = "0";
+            mentionsContent.style.bottom = "";
+            mentionsContent.style.opacity = "0";
             endPos = document.body.scrollHeight;
-            console.log("test2",endPos);
         }
     });
-      
-    // Obtaining the canvas element and its 2D rendering context.
-    const canvas = document.getElementById("canvas");
-    const ctx = canvas.getContext("2d");
 
-    // Setting the canvas dimensions to match the viewport size.
-    canvas.width = window.innerWidth;
-    canvas.height = document.body.scrollHeight;
-
-    window.addEventListener('resize', function() {
-        canvas.height = document.body.scrollHeight;
-    });
-
-    // Initializing an array to store circle information.
-    const circles = [];
-
-    // Defining constants for control.
-    const maxCircles = 20; // Limiting the number of circles on the canvas.
-    const trailLength = 10; // Specifying the length of the trails.
-
-    // Generating a random color for the circles.
-    function getRandomColor() {
-      const letters = "0123456789ABCDEF";
-      let color = "#";
-      for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-      }
-      return color;
-    }
-
-    // Creating a new circle and adding it to the array, managing the maximum limit.
-    function createCircle(x, y, radius, color) {
-      circles.push({ x, y, radius, color });
-
-      // Removing the oldest circle if the maximum circle count is reached.
-      if (circles.length > maxCircles) {
-        circles.shift();
-      }
-    }
-
-    // Function to draw the canvas and animate the circles.
-    function draw() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height); // Clearing the canvas.
-
-      // Looping through the circles array, drawing each with a fading effect.
-      for (let i = 0; i < circles.length; i++) {
-        const circle = circles[i];
-
-        ctx.beginPath();
-        ctx.arc(circle.x, circle.y, circle.radius, 0, Math.PI * 2);
-        ctx.fillStyle = circle.color;
-
-        // Adjusting the transparency based on the circle's position in the array.
-        ctx.globalAlpha = (i / circles.length) * 0.5;
-        ctx.fill();
-
-        circle.radius += 0.5; // Increasing the radius for animation.
-
-        // Removing old circles when they exceed a certain size.
-        if (circle.radius > 50) {
-          circles.splice(i, 1);
-          i--;
-        }
-      }
-
-      requestAnimationFrame(draw); // Continuing the animation loop.
-    }
-
-    // Function for handling mouse movement and creating new circles at the pointer.
-    function onMouseMove(event) {
-      const x = event.pageX;
-      const y = event.pageY;
-      createCircle(x, y, 10, getRandomColor()); // Creating a new circle at the mouse position.
-    }
-
-    canvas.addEventListener("mousemove", onMouseMove); // Listening for mouse movement.
-
-    draw(); // Starting the animation loop.
+    // contactLink.addEventListener('click', function() {
+    //     contactContent.scrollIntoView();
+    // });
 
 });

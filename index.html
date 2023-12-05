@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-    <title>Mon Portfolio</title>
-    
+    <title>Paul Lebée - Portfolio</title>
+    <link rel="icon" href="/images/favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Young+Serif" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.theme.default.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
-    <link rel="stylesheet" href="style/main.css">
-    <!-- <div id="circle"></div> -->
+    <link rel="stylesheet" href="styles/main.css">
+
 </head>
 <body>
     <canvas id="canvas"></canvas>
@@ -66,7 +65,7 @@
     </section>
 
 
-    <section  class="py-5" id="portfolio">
+    <section  class="py-5 d-none" id="portfolio">
         <div class="container">
         <div class="owl-carousel owl-main">
             <div class="item">
@@ -153,46 +152,11 @@
             </div></div>  
         </div>
         </div>
-        <div class="container">
+        <!-- <div class="container">
             <h1 class="display-5 title mb-5">Projets</h1>
-        </div>
+        </div> -->
     </section>
     <section> 
-        <div class="modal fade" id="popStereo" tabindex="-1" aria-labelledby="popupArticleLabel" aria-d-none="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header border-0 ms-3">
-                        <h1 class="modal-title w-100" id="popupArticleLabel">STEREO</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p class="m-3 mt-5">Au cours de notre formation nous sommes amenés à mettre en pratique nos connaissances dans des projets 
-                            multidisiplinaires. <br>
-                            Un de ces projets était la réalisation par groupe de trois d’un site web de vente de musique en ligne. 
-                            Une base de données contenant des utilisateurs, des albums, des titres et des playlists nous était fournie.
-                            Un cahier des charges précisait les attendus des différentes pages et fonctionnalités. Il était ensuite à 
-                            nous de définir l’aspect graphique du site ainsi que l’arborescence. 
-                            Pour ce projet je me suis en partie occupé du wireframe, de l'intégration de la base de données
-                            et de la stylisation grâce au framework CSS Tailwind.
-                        </p>
-                        <div class="owl-carousel owl-modal" >
-                            <figure class="figure item">
-                                <img src="images/stereo1.png" class="figure-img img-fluid rounded" alt="Page d'accueil du prototype du site">
-                                <figcaption class="figure-caption">Page d'accueil du prototype du site</figcaption>
-                            </figure>
-                            <figure class="figure item">
-                                <img src="images/stereo2.png" class="figure-img img-fluid rounded" alt="Page d'historique du site">
-                                <figcaption class="figure-caption">Page d'historique du site</figcaption>
-                            </figure>
-                            <figure class="figure item">
-                                <img src="images/stereo3.png" class="figure-img img-fluid rounded" alt="Wireframe du site">
-                                <figcaption class="figure-caption">Wireframe du site</figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="modal fade" id="popMP" tabindex="-1" aria-labelledby="popupArticleLabel" aria-d-none="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
@@ -203,7 +167,7 @@
                     <div class="modal-body"> 
                         <div class="owl-carousel owl-modal" >
                             <div class="item">
-                                <p class="mx-3 modal-bold mt-5">Dans le cadre de mon BUT MMI, je devais réaliser un stage en entreprise afin de 
+                                <p class="mx-auto modal-bold mt-5">Dans le cadre de mon BUT MMI, je devais réaliser un stage en entreprise afin de 
                                     de mettre en œuvre mes compétences acquises au cours de ma formation dans un contexte professionnel. 
                                     J'ai donc réalisé un stage de 14 semaines au sein de PUCE MUSE, une association d'art numérique spécialisé dans
                                     la musique visuelle. 
@@ -217,38 +181,38 @@
                                         les boutons du support de son choix (clavier, manette, ...)La note ou l’accord à venir dans la partition 
                                         est jouée. Cela laisse donc à l'utilisateur une notion d'interprétation puisqu'il choisit la manière dont il 
                                         joue (vitesse, intensité). 
+                                        <br><br>
+                                        Pour le développement du Mono-Piano j'avais donc le code de l'ancienne application Méta-Piano 
+                                        pour base de travail. En plus de m'assurer que les notes soient correctement jouée lorsque
+                                        l'utilisateur appuie sur des touches j'ai également du m'occuper de l'affichage. Cet affichage sous la forme de 
+                                        piano roll permet de voir les à suivre dans la partition. Je me suis assuré que l'affichage soit correct par rapport
+                                        à la partition et qu'il réagisse correctement aux actions de l'utilisateur. J'ai également ajouté des paramètres de 
+                                        personnalisation (couleur, nombres de notes affichées, largeur des notes). 
                                     </p>
-                                    <figure class="figure text-center mt-4 col">
+                                    <figure class="figure text-center  mt-4 col">
                                         <img src="images/monoP1.png" class="figure-img img-fluid rounded w-75" alt="Affichage des notes">
                                         <figcaption class="figure-caption">Affichage des notes</figcaption>
                                     </figure>
                                 </div>
-                                <!-- <p class="m-3">Pour le développement du Mono-Piano j'avais donc le code de l'ancienne application Méta-Piano 
-                                    pour base de travail. En plus de m'assurer que les notes soient correctement jouée lorsque
-                                    l'utilisateur appuie sur des touches j'ai également du m'occuper de l'affichage. Cet affichage sous la forme de 
-                                    piano roll permet de voir les à suivre dans la partition. Je me suis assuré que l'affichage soit correct par rapport
-                                    à la partition et qu'il réagisse correctement aux actions de l'utilisateur. J'ai également ajouté des paramètres de 
-                                    personnalisation (couleur, nombres de notes affichées, largeur des notes). 
-                                </p> -->
                             </div>
                             <div class="item">
-                                <p class="m-3 mt-5">Une nouveauté par rapport à l'ancienne version de l'application était l'ajout d'un parseur MIDI. Les 
+                                <p class="m-3 mt-5 mx-auto">Une nouveauté par rapport à l'ancienne version de l'application était l'ajout d'un parseur MIDI. Les 
                                     fichiers MIDI sont les fichiers utilisés pour partager des partitions musicales. L'objectif de ce parseur est de 
                                     permettre à l'utilisateur d'importer n'importe quel fichier MIDI pour pouvoir le jouer grace au Mono-Piano. 
                                     Le Mono-Piano utilisant format spécial pour pouvoir lire les partition il fallait donc que je développe un parseur
                                     transformant les fichiers MIDI en ce format. 
                                 </p>
-                                <figure class="figure mt-4 m-3 justify-content-center">
+                                <figure class="figure mt-4 text-center">
                                     <img src="images/monoP2.png" class="figure-img img-fluid rounded w-25" alt="Résultat du parseur MIDI">
-                                    <figcaption class="figure-caption">Résultat du parseur MIDI, lisible par le Mono-Piano</figcaption>
+                                    <figcaption class="figure-caption mx-auto">Résultat du parseur MIDI, lisible par le Mono-Piano</figcaption>
                                 </figure>
                             </div>
                             <div class="item justify-content-center">
-                                <p class="m-3 mt-5">La dernière étape était d'intégrer le logiciel dans un template d'interface Mono puisque toutes les 
+                                <p class="m-3 mt-5 mx-auto">La dernière étape était d'intégrer le logiciel dans un template d'interface Mono puisque toutes les 
                                     applications Mono de PUCE MUSE ont une interface similaires. En raison du temps de mon stage je n'ai malheuresement pas
                                     mettre en place moi-même l'interface.  
                                 </p>
-                                <figure class="figure mt-4 m-3">
+                                <figure class="figure mt-4 text-center">
                                     <img src="images/monoP3.png" class="figure-img img-fluid rounded w-75" alt="Interface de Mono-Map">
                                     <figcaption class="figure-caption">Interface de Mono-Map, un logiciel du groupe Mono</figcaption>
                                 </figure>
@@ -258,6 +222,42 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="popStereo" tabindex="-1" aria-labelledby="popupArticleLabel" aria-d-none="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header border-0 ms-3">
+                        <h1 class="modal-title w-100" id="popupArticleLabel">STEREO</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="m-5 mx-auto">Au cours de notre formation nous sommes amenés à mettre en pratique nos connaissances dans des projets 
+                            multidisiplinaires. <br>
+                            Un de ces projets était la réalisation par groupe de trois d’un site web de vente de musique en ligne. 
+                            Une base de données contenant des utilisateurs, des albums, des titres et des playlists nous était fournie.
+                            Un cahier des charges précisait les attendus des différentes pages et fonctionnalités. Il était ensuite à 
+                            nous de définir l’aspect graphique du site ainsi que l’arborescence. 
+                            Pour ce projet je me suis en partie occupé du wireframe, de l'intégration de la base de données
+                            et de la stylisation grâce au framework CSS Tailwind.
+                        </p>
+                        <div class="owl-carousel owl-modal" >
+                            <figure class="figure item text-center">
+                                <img src="images/stereo1.png" class="figure-img img-fluid rounded w-75 mx-auto" alt="Page d'accueil du prototype du site">
+                                <figcaption class="figure-caption">Page d'accueil du prototype du site</figcaption>
+                            </figure>
+                            <figure class="figure item text-center">
+                                <img src="images/stereo2.png" class="figure-img img-fluid rounded w-75 mx-auto" alt="Page d'historique du site">
+                                <figcaption class="figure-caption">Page d'historique du site</figcaption>
+                            </figure>
+                            <figure class="figure item text-center">
+                                <img src="images/stereo3.png" class="figure-img img-fluid rounded w-75 mx-auto" alt="Wireframe du site">
+                                <figcaption class="figure-caption">Wireframe du site</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <div class="modal fade" id="popMotion" tabindex="-1" aria-labelledby="popupArticleLabel" aria-d-none="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
@@ -265,18 +265,18 @@
                         <h1 class="modal-title w-100" id="popupArticleLabel">Quotidien Numérique</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body mt-5">
-                        <p class="m-3">Un autre projet réalisé lors de ma première année de BUT MMI était la réalisation par groupe de 4 d'un site dédié à l'innovation. Sur ce site devait figurer un motion design présentant une de ces innovation.
+                    <div class="modal-body mt-5 ">
+                        <p class="m-3 mx-auto">Un autre projet réalisé lors de ma première année de BUT MMI était la réalisation par groupe de 4 d'un site dédié à l'innovation. Sur ce site devait figurer un motion design présentant une de ces innovation.
                             Nous avons décidés de présenter Urban Canopee qui sont des mobiliers urbains végétaux écologiques. 
                             Je me suis occupé du design du personnage principal, de celui des Urban Canopee et de celui d'un camion. J'ai également animé une partie du motion design avec After Effects.
                         </p>
                         <div class="owl-carousel owl-modal" >
                             <figure class="figure text-center mt-4 item">
-                                <img src="images/urban1.png" class="figure-img img-fluid rounded" alt="Visuel principal du site">
+                                <img src="images/urban1.png" class="figure-img img-fluid rounded w-75" alt="Visuel principal du site">
                                 <figcaption class="figure-caption">Visuel principal du site</figcaption>
                             </figure>
                             <figure class="figure text-center mt-4 item">
-                                <img src="images/urban2.png" class="figure-img img-fluid rounded" alt="Extrait du motion design">
+                                <img src="images/urban2.png" class="figure-img img-fluid rounded w-75" alt="Extrait du motion design">
                                 <figcaption class="figure-caption">Image du motion design</figcaption>
                             </figure>
                         </div>
@@ -298,7 +298,7 @@
                                     <img src="images/ile1.png" class="figure-img img-fluid rounded w-75" alt="Image de l'île">
                                     <figcaption class="figure-caption text-center">L'île du projet</figcaption>
                                 </figure>
-                                <p class="m-3">Réalisé lors de ma deuxième année de BUT MMI, le but de ce projet était de créer 
+                                <p class="m-3 mx-auto">Réalisé lors de ma deuxième année de BUT MMI, le but de ce projet était de créer 
                                     une expérience en réalité virtuelle sur une île grâce au moteur de jeu Unity. Pour cette expérience, 
                                     nous devions mettre au point un scénario simple. L'objectif de mon expérience était d'empêcher 
                                     la destruction de l'île par une créature géante en trouvant son enfant qui est caché quelque 
@@ -314,36 +314,36 @@
                                     <img src="images/ile3.png" class="figure-img img-fluid rounded w-75" alt="Ville principale">
                                     <figcaption class="figure-caption">Ville principale</figcaption>
                                 </figure>
-                                <p class="m-3">Cette île était composée d'assets libres de droits disposés afin de créer 
+                                <p class="m-3 mx-auto">Cette île était composée d'assets libres de droits disposés afin de créer 
                                     un environnement cohérent et varié. L'expérience démarre dans une ville avec un château. 
                                     L'utilisateur passe ensuite à travers une forêt, une petite île isolée, un désert, des 
                                     montagnes et enfin un volcan. Les PNJ servant de guide étaient présents dans chacun de 
                                     ces environnements. En s'approchant, il était possible d'interagir avec eux afin d'afficher
                                     un dialogue. J'ai créé moi-même le modèle d'un de ces PNJ avec le logiciel de modélisation 3D Blender.
                                 </p>
-                                <p class="m-3">N'ayant pas de casque pour réellement faire de la réalité virtuelle, 
+                                <p class="m-3 mx-auto">N'ayant pas de casque pour réellement faire de la réalité virtuelle, 
                                     j'ai utilisé mon téléphone pour pouvoir contrôler la caméra en fonction des mouvements. 
                                     Une partie de l'écran permettait d'avancer.
                                 </p>
                             </div>
                             <div class="item">
                                 <div class="row">
-                                    <figure class="figure col-sm mt-4">
+                                    <figure class="figure col-sm mt-4 text-center">
                                         <img src="images/ile6.png" class="figure-img img-fluid rounded w-75" alt="Image île">
                                         <figcaption class="figure-caption">Vue depuis l'île</figcaption>
                                     </figure>
                                     <div class="col-sm">
                                         <div class="row">
-                                            <figure class="figure mt-3 col-sm">
+                                            <figure class="figure mt-3 col-sm text-center">
                                                 <img src="images/ile4.png" class="figure-img img-fluid rounded" alt="Personnage Blender">
                                                 <figcaption class="figure-caption">Personnage dans Blender</figcaption>
                                             </figure>
-                                            <figure class="figure col-sm ">
+                                            <figure class="figure col-sm text-center ">
                                                 <img src="images/ile8.png" class="figure-img img-fluid rounded" alt="Premier PNJ">
                                                 <figcaption class="figure-caption">Premier PNJ</figcaption>
                                             </figure>
                                         </div>
-                                        <figure class="figure">
+                                        <figure class="figure text-center">
                                             <img src="images/ile2.png" class="figure-img img-fluid rounded" alt="Cabane">
                                             <figcaption class="figure-caption">Vue de la forêt</figcaption>
                                         </figure>
@@ -359,26 +359,26 @@
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header border-0 text-start">
-                        <h1 class="modal-title w-100" id="popupArticleLabel">TOUBO</h1>
+                        <h1 class="modal-title w-100 ml-4" id="popupArticleLabel">TOUBO</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body mt-5">
-                        <p class="m-3 modal-bold">Réalisé lors de ma deuxième année de BUT MMI, l'objectif de ce projet était de réaliser par groupe de 3 un site de prévisions et statistiques météo.</p>
-                        <p class="m-3">Le but de ce projet était de créer un site responsive  récupérant des informations météorologiques en temps réel et proposant des statistiques. Pour ce faire, nous avons d'abord utilisé HTML/CSS pour créer la base du site et gérer l’affichage. Ensuite, nous avons récupéré les informations sur une ville au choix via des requêtes sur l'API de Météo France. Pour réaliser le dashboard des statistiques quotidiennes nous avons utilisés Chart.js. 
+                        <p class="m-3 modal-bold mx-auto">Réalisé lors de ma deuxième année de BUT MMI, l'objectif de ce projet était de réaliser par groupe de 3 un site de prévisions et statistiques météo.</p>
+                        <p class="m-3 mx-auto mb-4">Le but de ce projet était de créer un site responsive  récupérant des informations météorologiques en temps réel et proposant des statistiques. Pour ce faire, nous avons d'abord utilisé HTML/CSS pour créer la base du site et gérer l’affichage. Ensuite, nous avons récupéré les informations sur une ville au choix via des requêtes sur l'API de Météo France. Pour réaliser le dashboard des statistiques quotidiennes nous avons utilisés Chart.js. 
                             Je me suis principalement occupé de la réalisation et de l'intégration d'un dashborad Google Looker Studio qui permettait d'avoir des statistiques sur une période au choix..</p>
                         <div class="owl-carousel owl-modal">
                             <figure class="figure d-flex flex-column justify-content-center align-items-center item">
-                                <img src="images/toubo1.png" class="figure-img img-fluid rounded w-75" alt="Accueil Site">
+                                <img src="images/toubo1.png" class="figure-img img-fluid rounded w-50" alt="Accueil Site">
                                 <figcaption class="figure-caption">Page d'accueil du site</figcaption>
                             </figure>
                             
                             <figure class="figure d-flex flex-column justify-content-center align-items-center item">
-                                <img src="images/toubo2.png" class="figure-img img-fluid rounded w-75" alt="Dashboard">
+                                <img src="images/toubo2.png" class="figure-img img-fluid rounded w-50" alt="Dashboard">
                                 <figcaption class="figure-caption">Dashboard du site</figcaption>
                             </figure>
                         
                             <figure class="figure d-flex flex-column justify-content-center align-items-center item">
-                                <img src="images/toubo3.png" class="figure-img img-fluid rounded w-75" alt="Wireframe">
+                                <img src="images/toubo3.png" class="figure-img img-fluid rounded w-50" alt="Wireframe">
                                 <figcaption class="figure-caption">Wireframe du site</figcaption>
                             </figure>
                         </div>
@@ -389,22 +389,22 @@
         <div class="modal fade" id="popFlyers" tabindex="-1" aria-labelledby="popupArticleLabel" aria-d-none="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
-                    <div class="modal-header text-center">
+                    <div class="modal-header border-0 text-start">
                         <h1 class="modal-title w-100" id="popupArticleLabel">Flyers</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body mt-5">
                         <div class="row">
                             <figure class="figure text-center col-sm">
-                                <img src="images/flyer1.png" class="figure-img img-fluid rounded" alt="Recto Flyer">
+                                <img src="images/flyer1.png" class="figure-img img-fluid rounded w-75" alt="Recto Flyer">
                                 <figcaption class="figure-caption">Présentation de Saint-Lô</figcaption>
                             </figure>
                             <figure class="figure text-center col-sm">
-                                <img src="images/flyer2.png" class="figure-img img-fluid rounded" alt="Verso Flyer">
+                                <img src="images/flyer2.png" class="figure-img img-fluid rounded w-75" alt="Verso Flyer">
                                 <figcaption class="figure-caption">Présentation du BUT MMI</figcaption>
                             </figure>
                         </div>
-                        <p class="m-3">Un autre projet réalisé lors de mon BUT MMI était la réalisation de flyers de présentation de l'IUT, de la formation ainsi que de la ville de Saint-Lô. 
+                        <p class="m-3 mx-auto">Un autre projet réalisé lors de mon BUT MMI était la réalisation de flyers de présentation de l'IUT, de la formation ainsi que de la ville de Saint-Lô. 
                             Ces flyers en anglais ayant pour but d'attirer des élèves étrangers pour un échange universitaire. 
                         </p>
                     </div>
@@ -412,31 +412,41 @@
             </div>
         </div>
     </section>
-    <hr class="hr w-100 mt-4"/>
+
+    <hr class="hr w-100 mt-4 d-none" id="contactHr"/>
     <div id="blockContact"></div>
+
     <footer class="mb-4">
-        <section id="contact" class="mt-4">
+        <section id="contact" class="mt-4 d-none">
             <div class="container text-center">
-                <h2>Contact</h2>
+                <div class="row">
+                    <p class="col-sm mt-2">Copyright Paul Lebée - 2023</p>
+                    <h2 class="col-sm" id="contactLink"><u>Contact</u></h2>
+                    <p class="col-sm mt-2" id="mentionsLink"><u>Mentions légales</u></p>
+                </div>
                 <div id="contactContent" class="lead mt-2">
                     <p class="">Adresse mail : <u>p.lebee@orange.fr</u></p>
                     <a href="https://www.linkedin.com/in/paul-leb%C3%A9e-83a490233/" class="">Compte LinkedIn</a>
+                </div>
+                <div id="mentionsContent" class="lead mt-2">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm">
+                                <h5>Créateur du site</h5><p>Paul Lebée <br><u>p.lebee@orange.fr</u></p>
+                            </div>
+                            <div class="col-sm">
+                                <h5>Hébergeur</h5><p>IONOS SARL<br>7 PLACE DE LA GARE 57200   SARREGUEMINES</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </footer>
 </body>
 
-<script src="script.js"></script>
-<!-- <script type="module" src="test.js"></script> -->
+<script src="scripts/script.js"></script>
+<script src="scripts/mouseTrail.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-<script>
-    tailwind.config = {
-        prefix: "tw-",
-        corePlugins: {
-            preflight: false,
-        }
-    }
-</script>
 
 </html>
