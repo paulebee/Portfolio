@@ -78,11 +78,27 @@ br {
 .owl-main{
     width: 100%;
     margin: 0 auto;
-}
 
+}
 .owl-modal{
     width: 90%;
     margin: 0 auto;
+}
+
+.modal-content{
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: auto;
+    max-height: 95vh;
+}
+
+.modal-content::-webkit-scrollbar {
+    width: 10px;
+}
+.modal-content::-webkit-scrollbar-track-piece  {
+    background-color: rgb(248, 247, 242);
 }
 
 .owl-modal ,.figure-img{
@@ -176,21 +192,17 @@ hr {
     width: 50%;
 }
 
-.modal-body{
-}
-
-
 .modal-bold {
     font-weight: bold;
 }
 
-.owl-modal .owl-nav  .owl-prev{
-    left: 2em;
+.owl-modal > .owl-nav > .owl-prev{
+    margin-left:2em;
     top: 50%;
 }   
 
-.owl-modal .owl-nav .owl-next {
-    right: -1em;
+.owl-modal > .owl-nav > .owl-next {
+    margin-right: 6em;
     top: 50%;
 }
 
@@ -344,6 +356,45 @@ canvas{
 
     .modal-content{
         margin-left: -2em;
+        margin-right: 2em;
+        width: 100%;
+    }
+
+    .modal-body{
+        margin: 0;
+    }
+
+    .owl-modal{
+        width: 100%;
+        position: relative;
+        overflow-y: auto;
+        overflow-x: auto;
+        max-height: 55em;
+    } 
+
+    .owl-modal::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .item > p, .modal-body > p {
+        width: 100%;
+    }
+
+    .figure > img {  
+        width: 100%;
+    }
+    
+    .owl-modal > .owl-nav{
+        left: 0;
+        /* display: none; */
+    }
+
+    .owl-modal > .owl-nav > .owl-prev{
+        left: -1.5em;
+    }
+
+    .owl-modal > .owl-nav > .owl-next{
+        right: -5.5em;
     }
 
     #background{

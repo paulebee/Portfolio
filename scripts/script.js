@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     welcomeTitle.style.marginTop = -5 + "em";
     profil.style.marginTop = 5 + "em";
+    
 
     function opacityTransition(element, way){
         if(way == 'up'){
@@ -79,7 +80,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         hasClicked = true;
         clearInterval(clickMe);
         opacityTransition(background, 'down');
-        this.style.filter = "grayscale(0)";
         canvas.classList.add('d-none');
         setTimeout(function() {
             canvas.classList.remove('d-none');
@@ -158,8 +158,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     contactContent.style.bottom = "-8em";
                     contactContent.style.opacity = "1";
                     timeoutId = null; 
-                    endPos = document.body.scrollHeight;
-                    contactContent.scrollIntoView();
+                    setTimeout(function() {
+                        // endPos = document.body.scrollHeight;
+                        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
+                    }, 1300);
+                    
                 });
                 mentionsLink.addEventListener('click', function() {
                     if(contactContent.style.opacity == "1"){
@@ -174,8 +177,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     }
                     mentionsContent.style.opacity = "1";
                         timeoutId = null; 
-                        endPos = document.body.scrollHeight;
-                    mentionsContent.scrollIntoView();
+                    setTimeout(function() {
+                        mentionsContent.scrollIntoView();
+                    }, 1300);
                 });
             }
         } else {
