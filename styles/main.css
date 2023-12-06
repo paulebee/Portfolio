@@ -198,12 +198,12 @@ hr {
 
 .owl-modal > .owl-nav > .owl-prev{
     margin-left:2em;
-    top: 50%;
+    top: 10%;
 }   
 
 .owl-modal > .owl-nav > .owl-next {
     margin-right: 6em;
-    top: 50%;
+    top: 10%;
 }
 
 .trail { /* className for the trail elements */
@@ -391,10 +391,12 @@ canvas{
 
     .owl-modal > .owl-nav > .owl-prev{
         left: -1.5em;
+        top: 0;
     }
 
     .owl-modal > .owl-nav > .owl-next{
         right: -5.5em;
+        top: 0;
     }
 
     #background{

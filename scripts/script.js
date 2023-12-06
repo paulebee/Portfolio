@@ -95,6 +95,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 profilBg.classList.add('d-none');
                 opacityTransition(background, 'up');
                 opacityTransition(profil, 'up');
+                profil.style.filter = "grayscale(0)";
                 // imageContainer.classList.remove('d-none');
             }, 1000);  
             hasClicked = false;    
