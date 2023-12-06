@@ -221,7 +221,7 @@ canvas{
     width: 100%; 
     display: block;  
     filter: blur(4px);
-    height: 96%;
+    height: 100%;
 } 
 
 #portfolio{
@@ -256,6 +256,8 @@ canvas{
 
 #contactLink, #mentionsLink{
     cursor: pointer;
+    position: relative;
+    z-index: 4;
 }
 
 @media screen and (max-width: 1200px) {
@@ -406,10 +408,6 @@ canvas{
     .btn-close{
         top: 2em;
         right: 1em;
-    }
-
-    canvas{
-        height: 90%;
     }
 
     #mentionsContent{

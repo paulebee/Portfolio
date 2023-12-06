@@ -157,12 +157,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
                         mentionsContent.style.opacity = "0";
                     }
                     contactContent.style.bottom = "-8em";
+                    contactContent.scrollIntoView();
                     contactContent.style.opacity = "1";
+                    contactContent.style.bottom = "";
+                    contactContent.style.bottom = "-8em";
                     timeoutId = null; 
-                    setTimeout(function() {
+                    // setTimeout(function() {
                         // endPos = document.body.scrollHeight;
-                        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
-                    }, 1300);
+                    contactContent.scrollIntoView();
+                    // }, 1300);
                     
                 });
                 mentionsLink.addEventListener('click', function() {
