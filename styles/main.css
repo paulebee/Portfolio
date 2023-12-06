@@ -129,10 +129,10 @@ br {
     position: relative;
     z-index: -1;
     width: 19.7em;
-    transform: scale(2);
+    transform: scale(2.5);
     margin-top: 5em;
     margin-left: -3em;
-    transition: all 1.5s ease-in-out;
+    transition: all 1s ease-in-out;
 }
 
 #profilDesc{
@@ -178,7 +178,7 @@ hr {
 }
 
 .modal-dialog {
-    max-width: 90%;
+    max-width: 70%;
     height: 30%;
     margin-top: 1em;
 }
@@ -194,16 +194,6 @@ hr {
 
 .modal-bold {
     font-weight: bold;
-}
-
-.owl-modal > .owl-nav > .owl-prev{
-    margin-left:2em;
-    top: 10%;
-}   
-
-.owl-modal > .owl-nav > .owl-next {
-    margin-right: 6em;
-    top: 10%;
 }
 
 .trail { /* className for the trail elements */
@@ -270,9 +260,6 @@ canvas{
         font-size: 8em;
     }
 
-}
-
-@media screen and (max-width: 1200px) {
     .owl-main, .owl-modal{
         width: 90%;
     }
@@ -318,8 +305,8 @@ canvas{
         font-size: 3em;
     }
 
-    .modal-body{
-        font-size: 0.75em;
+    .item > p, .modal-body > p {
+        width: 80%;
     }
 
     .modal-content{
@@ -336,6 +323,11 @@ canvas{
     #background{
         margin-top: -2em;
         height: 55em;
+    }
+
+    #contactContent, #mentionsContent{
+        background-repeat: repeat;
+        background-size: unset;
     }
 }
 
@@ -356,14 +348,18 @@ canvas{
         top: 12em;
     }
 
-    .modal-content{
-        margin-left: -2em;
-        margin-right: 2em;
-        width: 100%;
+    .modal-dialog{
+        max-width: 100%;
+        margin: auto;
     }
 
     .modal-body{
-        margin: 0;
+        left: 0;
+    }
+    .modal-content{
+        margin: auto;
+        left : 0;
+        width: 100%;
     }
 
     .owl-modal{
@@ -379,28 +375,14 @@ canvas{
     }
     
     .item > p, .modal-body > p {
-        width: 100%;
+        width: 80%;
+        font-size: 1em;
     }
 
     .figure > img {  
         width: 100%;
     }
     
-    .owl-modal > .owl-nav{
-        left: 0;
-        /* display: none; */
-    }
-
-    .owl-modal > .owl-nav > .owl-prev{
-        left: -1.5em;
-        top: 0;
-    }
-
-    .owl-modal > .owl-nav > .owl-next{
-        right: -5.5em;
-        top: 0;
-    }
-
     #background{
         margin-top: 20em;
     }
@@ -412,6 +394,5 @@ canvas{
 
     #mentionsContent{
         margin: 0;
-        
     }
 }

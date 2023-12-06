@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         items: 1,
         margin: 10,
         loop: true, 
-        nav: true,
+        dots: true,
         // mouseDrag : true,
     });
     
@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let portfolio = document.getElementById('portfolio');
     let welcomeTitle = document.getElementById('welcomeTitle');
     let canvas = document.getElementById("canvas");
+
 
     welcomeTitle.style.marginTop = -5 + "em";
     profil.style.marginTop = 5 + "em";
@@ -81,6 +82,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         clearInterval(clickMe);
         opacityTransition(background, 'down');
         canvas.classList.add('d-none');
+        opacityTransition(background, 'up');
+        
         setTimeout(function() {
             canvas.classList.remove('d-none');
             canvas.width = window.innerWidth;
@@ -93,10 +96,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
             setTimeout(function() {
                 profilDesc.classList.add('d-none');
                 profilBg.classList.add('d-none');
-                opacityTransition(background, 'up');
                 opacityTransition(profil, 'up');
                 profil.style.filter = "grayscale(0)";
-                // imageContainer.classList.remove('d-none');
             }, 1000);  
             hasClicked = false;    
         } 
@@ -156,16 +157,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
                         mentionsContent.style.bottom = "";
                         mentionsContent.style.opacity = "0";
                     }
-                    contactContent.style.bottom = "-8em";
+                    contactContent.style.bottom = "-10em";
                     contactContent.scrollIntoView();
                     contactContent.style.opacity = "1";
-                    contactContent.style.bottom = "";
-                    contactContent.style.bottom = "-8em";
                     timeoutId = null; 
-                    // setTimeout(function() {
-                        // endPos = document.body.scrollHeight;
-                    contactContent.scrollIntoView();
-                    // }, 1300);
+                    setTimeout(function() {
+                        contactContent.scrollIntoView();
+                    }, 1300);
                     
                 });
                 mentionsLink.addEventListener('click', function() {
@@ -174,10 +172,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
                         contactContent.style.opacity = "0";
                     }
                     if(window.innerWidth < 575){
-                        mentionsContent.style.bottom = "-15em";
+                        mentionsContent.style.bottom = "-30%";
+                    }
+                    else if(window.innerWidth < 700){
+                        mentionsContent.style.bottom = "-20%";
                     }
                     else{
-                        mentionsContent.style.bottom = "-10em";
+                        mentionsContent.style.bottom = "-20%";
                     }
                     mentionsContent.style.opacity = "1";
                         timeoutId = null; 
