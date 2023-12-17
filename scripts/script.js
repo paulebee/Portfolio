@@ -47,11 +47,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let portfolio = document.getElementById('portfolio');
     let welcomeTitle = document.getElementById('welcomeTitle');
     let canvas = document.getElementById("canvas");
-
+    let contactRow = document.getElementById('rowContact');
+    let footer = document.querySelector('footer');
+    let navbar = document.getElementById('navbar');
 
     welcomeTitle.style.marginTop = -5 + "em";
     profil.style.marginTop = 5 + "em";
     
+    let contentPos, contactContentHeight, mentionsContentHeight = "";
+    let origin = 0;
+    var rect = 0;
+    var targetScrollPosition = 0;
 
     function opacityTransition(element, way){
         if(way == 'up'){
@@ -83,11 +89,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
         opacityTransition(background, 'down');
         canvas.classList.add('d-none');
         opacityTransition(background, 'up');
-        
+        navbar.classList.remove('d-none');
+
         setTimeout(function() {
             canvas.classList.remove('d-none');
             canvas.width = window.innerWidth;
             canvas.height = document.body.scrollHeight;
+            origin = Math.max(
+                document.body.scrollHeight,
+                document.body.offsetHeight,
+                document.documentElement.clientHeight,
+                document.documentElement.scrollHeight,
+                document.documentElement.offsetHeight
+            );
+            targetScrollPosition = contactRow.offsetTop + contactRow.offsetHeight - window.innerHeight;
         }, 1500);
     });
 
@@ -145,62 +160,142 @@ document.addEventListener('DOMContentLoaded', (event) => {
         loopElementColor();
     // })
 
-    let timeoutId;
-    let endPos = document.body.scrollHeight;
-    window.addEventListener('scroll', () => {
-        endPos = document.body.scrollHeight;
-        if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-            // User has scrolled to the bottom of the page
-            if (!timeoutId) {
-                contactLink.addEventListener('click', function() {
-                    if(mentionsContent.style.opacity == "1"){
-                        mentionsContent.style.bottom = "";
-                        mentionsContent.style.opacity = "0";
-                    }
-                    contactContent.style.bottom = "-10em";
-                    contactContent.scrollIntoView();
-                    contactContent.style.opacity = "1";
-                    timeoutId = null; 
-                    setTimeout(function() {
-                        contactContent.scrollIntoView();
-                    }, 1300);
-                    
-                });
-                mentionsLink.addEventListener('click', function() {
-                    if(contactContent.style.opacity == "1"){
-                        contactContent.style.bottom = "";   
-                        contactContent.style.opacity = "0";
-                    }
-                    if(window.innerWidth < 575){
-                        mentionsContent.style.bottom = "-30%";
-                    }
-                    else if(window.innerWidth < 700){
-                        mentionsContent.style.bottom = "-20%";
-                    }
-                    else{
-                        mentionsContent.style.bottom = "-20%";
-                    }
-                    mentionsContent.style.opacity = "1";
-                        timeoutId = null; 
-                    setTimeout(function() {
-                        mentionsContent.scrollIntoView();
-                    }, 1300);
-                });
-            }
-        } else {
-            // User is not at the bottom of the page, clear the timeout
-            clearTimeout(timeoutId);
-            timeoutId = null;  // Reset the timeout ID
-            contactContent.style.bottom = "";
-            contactContent.style.opacity = "0";
-            mentionsContent.style.bottom = "";
-            mentionsContent.style.opacity = "0";
-            endPos = document.body.scrollHeight;
-        }
+    addEventListener('resize', function() {
+        contentPos = document.body.clientHeight - contactRow.offsetHeight;   
+        contactContentHeight = contactContent.offsetHeight;
+        canvas.height = document.body.scrollHeight;          
     });
 
-    // contactLink.addEventListener('click', function() {
-    //     contactContent.scrollIntoView();
-    // });
 
+    // User has scrolled to the bottom of the page
+    let alreadyOpened = false;
+    let hasReachedBottom = false;
+
+    let prevScrollPos = document.documentElement.scrollTop;
+
+    function clearFooter(){
+        var scrollTriggerPosition = 500; 
+        var isScrollingUp = false;
+        var wasAtBottom = false;     
+        document.addEventListener('scroll', function () {
+            var currentScrollPosition = window.scrollY;
+    
+            if (currentScrollPosition < scrollTriggerPosition) {
+                isScrollingUp = true;
+            } else {
+                isScrollingUp = false;
+            }
+    
+            var bottom = (window.innerHeight + window.scrollY) >= document.body.offsetHeight;
+            
+            if(bottom){
+                wasAtBottom = true;
+            }
+    
+            if (wasAtBottom && isScrollingUp) {
+                contactRow.style.marginTop ="";
+                contactContent.style.opacity = "0";
+                contactContent.style.top = "";
+                contactContent.style.display = "none";
+                mentionsContent.style.display = "none";
+                mentionsContent.style.opacity = "0";
+                mentionsContent.style.top = "";
+                hasReachedBottom = false;
+                alreadyOpened = false;
+                console.log("Scrolled up past the trigger position after being at the bottom.");
+            }
+        });
+
+    }
+   
+
+    function openFooter(element, alreadyOpened){
+        let delay = "";
+        if(alreadyOpened){
+            delay = 0;
+        }
+        else{
+            delay = 0;
+        }
+        setTimeout(function() {
+            contentPos = document.body.scrollHeight - contactRow.offsetHeight;
+            console.log(contentPos, origin);
+            element.style.top = contentPos + "px";
+            element.style.display = "block";
+            elementHeight = element.offsetHeight;
+            contactRow.style.marginTop = elementHeight + "px";
+            element.style.opacity = "1";
+            clearFooter();
+        }, delay);
+    }
+
+    contactLink.addEventListener('click', function() {
+        if(contactContent.style.opacity == "1"){
+            setTimeout(function() {
+                window.scrollTo({
+                    top: targetScrollPosition,
+                    behavior: 'smooth' // You can use 'auto' for instant scrolling
+                });
+            }, 1600);
+            contactRow.style.marginTop ="";
+            contactContent.style.opacity = "0";
+            contactContent.style.top = "";
+            contactContent.style.display = "none";
+            hasReachedBottom = false;
+            alreadyOpened = false;
+        }
+        else if(mentionsContent.style.opacity == "1"){
+            setTimeout(function() {
+                window.scrollTo({
+                    top: targetScrollPosition,
+                    behavior: 'smooth' // You can use 'auto' for instant scrolling
+                });
+                openFooter(contactContent,alreadyOpened);
+            }, 1600);
+            mentionsContent.style.display = "none";
+            mentionsContent.style.opacity = "0";
+            mentionsContent.style.top = "";
+            contactRow.style.marginTop ="";
+        }
+        else {
+            openFooter(contactContent,alreadyOpened);
+            alreadyOpened = true;
+        }     
+    });
+    
+    mentionsLink.addEventListener('click', function() {
+        if(mentionsContent.style.opacity == "1"){
+            setTimeout(function() {
+                window.scrollTo({
+                    top: targetScrollPosition,
+                    behavior: 'smooth' // You can use 'auto' for instant scrolling
+                });
+            }, 1600);
+            contactRow.style.marginTop ="";
+            mentionsContent.style.opacity = "0";
+            mentionsContent.style.top = "";
+            mentionsContent.style.display = "none";
+            hasReachedBottom = false;
+            alreadyOpened = false;
+        }
+        else if(contactContent.style.opacity == "1"){
+            setTimeout(function() {
+                window.scrollTo({
+                    top: targetScrollPosition,
+                    behavior: 'smooth' // You can use 'auto' for instant scrolling
+                });
+                openFooter(mentionsContent,alreadyOpened);
+            }, 1600);
+            contactContent.style.opacity = "0";
+            contactContent.style.top = "";
+            contactContent.style.display     = "none";
+            contactRow.style.marginTop ="";
+            
+        }
+        else {
+            openFooter(mentionsContent,alreadyOpened);
+            alreadyOpened = true;
+        }   
+    });
+    
 });

@@ -113,7 +113,7 @@ br {
 .page-section>.content-wrapper { display: flex; flex-basis: 100%; width: 0; }
 
 #welcomeTitle{
-    margin-top: -10em;
+    margin-top: -11em;
     position: relative; 
     z-index: -1;
     transition: all 1s ease-in-out;
@@ -121,7 +121,7 @@ br {
 
 #profil{
     z-index: 1;
-    width: 20em;
+    width: 22.5em;
     cursor:pointer;
     filter: grayscale(1) drop-shadow(0 0 0.75rem rgb(160, 160, 160));
     transition: filter 0.3s ease-in-out, opacity 1.5s ease-in-out, margin-top 1s ease-in-out;
@@ -223,6 +223,23 @@ canvas{
     margin-bottom: 4em;
 }
 
+#contact{
+    width: 100%;
+    overflow-x: hidden;
+    padding: 0;
+}
+
+#rowContact{
+    background-color: rgb(255, 255, 255);
+    padding-bottom: 2em;
+    transition: all 1.5s ease-in-out;
+    position: relative;
+}
+
+#contact:first-child hr{
+    margin-bottom: 2em;
+}
+
 #contactContent, #mentionsContent{
     position : absolute;
     width: 100%;
@@ -232,11 +249,10 @@ canvas{
     background-size: 100%;
     padding-top: 2em;
     padding-bottom: 2em;
-    z-index: -4;
-    bottom: 5em;
-    opacity: 0;
-    transition: all 1.5s ease-in-out;
+    top: 76em;
     filter: brightness(1.15);
+    display: none;
+    z-index: -2;
 }
 
 #blockContact{

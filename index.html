@@ -16,7 +16,7 @@
 </head>
 <body>
     <canvas id="canvas"></canvas>
-    <nav class="navbar navbar-expand-lg navbar-light mt-2" id="accueil" >
+    <nav class="navbar navbar-expand-lg navbar-light mt-2  d-none" id="navbar" >
         <div class="container">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -48,8 +48,7 @@
                         le domaine du développement informatique lié au multimédia. Vous trouverez sur ce portfolio certains de mes projets
                         réalisés au cours de mes études.
                     </p>   
-                    <img src="images/profilBg.png" id="profilBg" class="d-none" alt="profil colored background">
-                    <!-- <div class="image-container" id="imageContainer"></div>    -->    
+                    <img src="images/profilBg.png" id="profilBg" class="d-none" alt="profil colored background">   
                 </div>
             </div>
             <div class="row" id="welcomeTitle">
@@ -426,13 +425,15 @@
         </div>
     </section>
 
-    <hr class="hr w-100 mt-4 d-none" id="contactHr"/>
+    
     <div id="blockContact"></div>
 
-    <footer class="mb-4">
+    <footer>
         <section id="contact" class="mt-4 d-none">
-            <div class="container text-center">
-                <div class="row">
+            
+            <div class="text-center">
+                <div class="row" id="rowContact">
+                    <hr class="" id="contactHr"/>
                     <p class="col-sm mt-2">Copyright Paul Lebée - 2023</p>
                     <h2 class="col-sm" id="contactLink"><u>Contact</u></h2>
                     <p class="col-sm mt-2" id="mentionsLink"><u>Mentions légales</u></p>
@@ -444,8 +445,8 @@
                 <div id="mentionsContent" class="mt-2">
                     <div class="container">
                         <div class="row">
-                            <h5>Mentions Légales</h5>
-                            <p class="text-start"> Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance
+                            <h5 class="text-decoration-underline">Mentions Légales</h5>
+                            <p> Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance
                                 en l'économie numérique, il est précisé aux utilisateurs du site paul-lebee.fr l'identité
                                 des différents intervenants dans le cadre de sa réalisation et de son suivi.
                             </p> 
@@ -456,7 +457,7 @@
                                 <h5>Hébergeur</h5><p>IONOS SARL<br>7 PLACE DE LA GARE 57200   SARREGUEMINES</p>
                             </div>
                             <div class="col-sm">
-                                <h5>Données personnelles</h5><p class="text-start">Le site paul-lebee.fr ne collecte aucune donnée personnelle. 
+                                <h5>Données personnelles</h5><p>Le site paul-lebee.fr ne collecte aucune donnée personnelle. 
                                 Les données d'analyses sont anonymisées et ne sont pas utilisées à des fins commerciales.
                                 </p>
                             </div>
