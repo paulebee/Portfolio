@@ -1,0 +1,208 @@
+html, body {
+    margin: 0;
+    
+  }
+
+  .slide-container {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    padding-top: 4em;
+  }
+  
+  
+  .slide {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    margin-top: -4em;
+  }
+
+  .slide > div {
+    padding-top: 10em;
+    padding-bottom: 10em;
+  }
+  
+  .slide-toggle-container {
+    position: absolute;
+    width: 15%;
+    height: 100%;
+    right:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    top: -2em;
+  }
+  
+  .slide-toggle {
+    margin: .5em;
+    cursor: pointer;
+  }
+  
+  .chevron {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.8);
+    stroke-width: 3;
+    transition: .2s all linear;
+  }
+  
+  .slide-toggle:hover > .chevron {
+    stroke: rgba(0,0,0,.4);
+  }
+  
+  .index {
+    position: absolute;
+    left: 0;
+    width: 15%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 3;
+    top: -1em;
+    font-size: 1.5em;
+    opacity: 0.5;
+  }
+  
+  .overlay {
+    background-color: rgba(0, 0, 0, 35%); /* Adjust the alpha channel (0.5 for 50% opacity) */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    backdrop-filter: blur(10px);
+    z-index: -1;
+  }
+  
+  .categories {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: white;
+    z-index: 1;
+    font-size: 1.25em;
+    font-weight: 2em;
+  }
+  
+  .slide img:hover {
+      opacity: 0.9;
+  }
+  
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    z-index: -1;
+    object-fit: cover;
+  }
+
+  .bg-stereo {
+    background-image: url(../images/stereo1.png);
+  }
+
+  .bg-mono {
+    background-image: url(../images/monoP1.png);
+  }
+
+  .bg-ile {
+    background-image: url(../images/ile1.png);
+  }
+
+  .bg-QN {
+    background-image: url(../images/urban1.png);
+    background-position: top;
+  }
+
+  .bg-toubo {
+    background-image: url(../images/toubo2.png);
+    background-position: top;
+  }
+
+  .bg-flyers {
+    background-image: url(../images/flyer1.png);
+  }
+  
+  .slide h1 {
+    text-align: center;
+    margin: 20px 0px 10px 0px;
+    color: rgba(255, 255, 255);
+    font-size: 5em;
+  }
+  
+  .slide img {
+      width: 25em;
+      margin-bottom: 2em;
+      z-index: 1;
+  }
+
+  .slide-5 img{
+    width: 35em;
+  }
+  
+  .slide button {
+    position: absolute;
+    left: 50%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 8em;
+  }
+
+  .slide .btn-lg {
+    z-index: 2;
+    background-color: rgb(240, 248, 255, 0.5);
+    border: 0;
+    color: white;
+    font-family: 'Montserrat';
+    font-size: 1em;
+    margin-top: 1em;
+  }
+
+  .slide .btn-lg:hover, .btn-lg:active{
+      background-color: rgb(240, 248, 255, 0.75);
+  }
+
+  @media screen and (max-width: 570px) {
+
+    .slide h1 {
+      font-size: 3em;
+    }
+    .slide-5 img{
+      width: 25em;
+    }
+  }
+
+  @media screen and (max-width: 435px){
+    .slide-toggle-container{
+        margin-right: 0.5em;
+  }
+}
+  
+  
+  
+  
+          
