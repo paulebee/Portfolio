@@ -4,38 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <title>Paul Lebée - Portfolio</title>
-    <link rel="icon" href="/images/favicon.png">
+    <meta name="description" content="Portfolio de Paul Lebée, étudiant en 3ème année de BUT MMI.">
+    <meta property="og:site_name" content="https://paul-lebee.fr">
+    <meta name="keywords" content="paul lebée portofolio BUT MMI"/>
+    <meta name="author" content="Paul Lebée">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="../images/favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Young+Serif" rel="stylesheet">
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="slider.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="styles/modal.css">
+    <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body class="d-flex flex-column min-vh-100">
-    <nav class="navbar navbar-expand-lg navbar-light mt-2" id="navbar" style="opacity: 1;">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../#profilPart">Accueil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../#competences">Compétences</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../#portfolio">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../#portfolio">Contact</a>
-                    </li>
-                </ul>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light mt-2" id="navbar" >
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../#profilPart">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../#competences">Compétences</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../#portfolio">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../#portfolio">Contact</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
+    
     <section>
         <div style="margin-left: 4em; margin-right: 4em;">
             <h1>Mentions Légales</h1>
@@ -66,12 +72,17 @@
             </div>
             <div class="contactLink">
                 <a href="https://www.linkedin.com/in/paul-leb%C3%A9e-83a490233/">
-                    <img src="images/logoLinkedIn.png" alt="logo LinkedIn">
+                    <img src="../images/logoLinkedIn.png" alt="logo LinkedIn">
                 </a>
                 <a href="mailto:p.lebee@orange.fr">
-                    <img src="images/logoMail.png" alt="mail Logo">
+                    <img src="../images/logoMail.png" alt="mail Logo">
                 </a>
             </div>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script>
+        let navbar = document.querySelector("header");
+        navbar.style.opacity = 1;
+    </script>
 </body>

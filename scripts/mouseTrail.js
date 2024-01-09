@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const canvas = document.getElementById("canvas");
   const profilPart = document.getElementById("profilPart");
   const ctx = canvas.getContext("2d");
-  let profil = document.getElementById('profil');
 
+  console.log("mousetrail chargé");
   canvas.width = 0;
   canvas.height = 0;
 

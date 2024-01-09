@@ -50,7 +50,7 @@ h1,h2 {
     font-family: 'Young Serif';
 }
 
-p,li, a {
+p, li, a, h3 {
     font-family: 'Montserrat';
 }
 
@@ -60,7 +60,9 @@ p,li, a {
 }
 
 br {
-    display:block; margin-top:12px; line-height:22px;
+    display:block; 
+    margin-top:12px; 
+    line-height:22px;
 }
 
 .card{
@@ -73,7 +75,7 @@ br {
 
 .page-section>.content-wrapper { display: flex; flex-basis: 100%; width: 0; }
 
-.navbar{
+header{
     opacity: 0;
     transition: all 1s ease-in-out;
     position:sticky;
@@ -99,15 +101,15 @@ br {
     filter: grayscale(1) drop-shadow(0 0 0.75rem rgb(160, 160, 160));
     transition: filter 0.3s ease-in-out, opacity 1.5s ease-in-out, margin-top 1s ease-in-out;
     margin-left: -5em;
-    margin-top: 0em;
+    margin-top: 5em;
 }
 
 #profilBg{
     position: relative;
     z-index: -1;
     width: 19.7em;
-    transform: scale(2.5);
-    margin-top: 5.3em;
+    transform: scale(2.4);
+    margin-top: 2em;
     margin-left: -3em;
     transition: all 1s ease-in-out;
 }
@@ -116,7 +118,7 @@ br {
     position: relative;
     width: 20em;    
     color: rgb(40, 40, 40);
-    margin-top: 8em;
+    margin-top: 11.8em;
     margin-bottom: -18em;
     margin-left: -3.5em;
     z-index: 1;
@@ -129,6 +131,7 @@ br {
     left: 0;
     width: 100%;
     height: 100vh;
+    overflow: hidden;
 }
 
 #background {
@@ -202,8 +205,8 @@ footer img {
 
 footer .contactLink {
     display: flex;
-    justify-content: center; /* Center the items horizontally */
-    gap: 1em; /* Adjust as needed to control the space between the items */
+    justify-content: center; 
+    gap: 1em; 
 }
 
 footer a {
@@ -244,7 +247,7 @@ footer a {
     background-color: rgb(255, 255, 255,0.7);
 }
 
-#competences h1 {
+#competences h2 {
     text-align: center;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
@@ -264,15 +267,6 @@ footer a {
     font-size: 1.1em;
 }
 
-.owl-stage .active p {
-    width: 100%;
-
-}
-
-.owl-modal {
-    width: 80%;
-}
-
 
 @media screen and (max-width: 1200px) {
 
@@ -285,14 +279,15 @@ footer a {
     }
 
     #background{
-        margin-top: 10em;
+        margin-top: 20em;
+        scale: 1.5;
     }
 }
 
 @media screen and (max-width: 948px) {
 
     html {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
 
     .title{
@@ -300,14 +295,16 @@ footer a {
     }
 
     #background{
-        margin-top: 10em;
+        margin-top: 40em;
+    }
+
+    #competences {
+        font-size: 0.9em;
+        padding-top: 6.5em;
     }
 }
 
 @media screen and (max-width: 700px) {
-    html{
-        font-size: 0.6rem;
-    }
 
     #profilDiv{
         margin-top: 8em;
@@ -324,33 +321,12 @@ footer a {
     }
 
     #background{
-        margin-top: 20em;
+        margin-top: 60em;
+        scale: 2;
     }
-
-}
-
-@media screen and (max-width: 575px) {
-
     #competences {
-        padding-right: 2em;
-    }
-
-    #competences h2 {
-        padding-top: 0.2em;
-        padding-bottom: 0.2em;
-    }
-    
-    #competences li {
-        margin-top: 0.5em;
-        font-size: 1em;
-    }
-
-    #competences > div > div {
-        min-height: 15vh;
-    }
-
-    .flex-grow-1 {
-        margin-left: -50%;
+        font-size: 0.8em;
+        padding-top: 6.5em;
     }
 
     #profilDiv{
@@ -362,9 +338,40 @@ footer a {
         font-size: 7em;
         margin-top: 2em;
     }
+
+}
+
+@media screen and (max-width: 575px) {
+
+    #competences {
+        padding-right: 2em;
+    }
+
+    #competences {
+        font-size: 0.7em;
+        padding-top: 8.5em;
+    }
+
+    #competences h2 {
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
+    }
+    
+    #competences li {
+        margin-top: 0.5em;
+    }
+
+    #competences > div > div {
+        min-height: 15vh;
+    }
+
+    .flex-grow-1 {
+        margin-left: -50%;
+    }
     
     #background{
-        margin-top: 40em;
+        margin-top: 70em;
+        scale: 2.5;
     }
 
     .btn-close{
@@ -376,3 +383,33 @@ footer a {
         margin: 0;
     }
 }
+@media screen and (max-width: 450px) {
+    #welcomeTitle{
+        font-size: 0.7em;
+    }
+}
+
+@media screen and (min-height: 1070px){
+    #background{
+        margin-top: 15em;
+    }
+}
+
+@media screen and (max-width: 1200px) and (min-height: 1070px){
+    #background{
+        margin-top: 30em;
+    }
+}
+
+@media screen and (max-width: 948px) and (min-height: 1070px){
+    #background{
+        margin-top: 40em;
+    }
+}
+
+@media screen and (max-width: 575px) and (min-height: 1070px){
+    #background{
+        margin-top: 60em;
+    }
+}
+

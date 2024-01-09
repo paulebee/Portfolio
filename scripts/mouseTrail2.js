@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-
   const canvas = document.getElementById("canvas2");
   const competences = document.getElementById("competences");
   const ctx = canvas.getContext("2d");
@@ -13,13 +12,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
     canvas.height = document.body.clientHeight
   });
 
+  
   competences.addEventListener('mouseover', function() {
-    console.log('add');
     canvas.classList.remove('d-none');
   });
 
   competences.addEventListener('mouseout', function() {
-    console.log('remove');
     canvas.classList.add('d-none');
   });
  

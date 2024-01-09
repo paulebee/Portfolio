@@ -22,7 +22,7 @@ html, body {
     position: sticky;
     top: 0;
     width: 100%;
-    height: 90vh;
+    height: 80vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -142,10 +142,10 @@ html, body {
   }
 
   .bg-flyers {
-    background-image: url(../images/flyer1.png);
+    background-image: url(../images/flyer1.jpg);
   }
   
-  .slide h1 {
+  .slide h2 {
     text-align: center;
     margin: 20px 0px 10px 0px;
     color: rgba(255, 255, 255);
@@ -188,7 +188,7 @@ html, body {
 
   @media screen and (max-width: 570px) {
 
-    .slide h1 {
+    .slide h2 {
       font-size: 3em;
     }
     .slide-5 img{
@@ -199,8 +199,14 @@ html, body {
   @media screen and (max-width: 435px){
     .slide-toggle-container{
         margin-right: 0.5em;
+    }
+  } 
+
+  @media screen and (min-height: 1070px){
+    .slide {
+      height: 85vh;
+    }
   }
-}
   
   
   

@@ -1,20 +1,4 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-    $('.owl-main').owlCarousel({
-        loop: true, 
-        margin: 20,
-        nav: true,
-        responsive: {
-            0: {
-                items: 1 
-            },
-            600: {
-                items: 2
-            },
-            1000: {
-                items: 3 
-            }
-        }
-    });
 
     $('.owl-modal').owlCarousel({
         items: 1,
@@ -24,32 +8,23 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // mouseDrag : true,
     });
     
-    $('.custom-nav button.next').on('click', function() {
-    $('.owl-carousel').trigger('next.owl.carousel');
-    });
-    $('.custom-nav button.prev').on('click', function() {
-    $('.owl-carousel').trigger('prev.owl.carousel');
-    });
-
     let background = document.getElementById('background'),
      profilBg = document.getElementById('profilBg'),
      profilDesc = document.getElementById('profilDesc'),
      profil = document.getElementById('profil'),
-     profilDiv = document.getElementById('profilDiv'),
      hasClicked = false,
      portfolio = document.getElementById('portfolio'),
-     welcomeTitle = document.getElementById('welcomeTitle'),
      canvas = document.getElementById("canvas"),
      footer = document.querySelector('footer'),
-     navbar = document.getElementById('navbar'),
+     navbar = document.querySelector('header');
      body = document.body,
      competences = document.getElementById('competences'),
     html = document.documentElement;
-
-    profil.style.marginTop = 5 + "em";
     
     let origin = 0;
 
+
+    //Transition avec d-none
     function opacityTransition(element, way){
         if(way == 'up'){
             element.classList.remove('d-none');
@@ -68,6 +43,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 
+    //Actions survol profil
     profil.addEventListener('mouseover', function() {
         portfolio.classList.remove('d-none');
         this.classList.add('d-none');
@@ -75,16 +51,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
         opacityTransition(profilBg, 'up');
         hasClicked = true;
         clearInterval(clickMe);
-        // opacityTransition(background, 'down');
-        // canvas.classList.add('d-none');
-        // opacityTransition(background, 'up');
         opacityTransition(background, 'up');
         navbar.style.opacity = 1;
         footer.classList.remove('d-none');
         competences.classList.remove('d-none');
 
         setTimeout(function() {
-            // canvas.classList.remove('d-none');
             canvas.width = window.innerWidth;
             canvas.height = Math.max( body.scrollHeight, body.offsetHeight, 
                 html.clientHeight, html.scrollHeight, html.offsetHeight );
@@ -99,6 +71,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }, 1500);
     });
 
+    //Réaparition profil
     function clearProfile() {
         if(hasClicked){
             setTimeout(function() {
@@ -110,14 +83,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
             hasClicked = false;    
         } 
     }
-
-    document.addEventListener('click', function() {
-        console.log(canvas.height);
-    });
-
+    
     profilBg.addEventListener('mouseout', clearProfile);
     document.addEventListener('scroll', clearProfile);
     
+    //Animation profil
     let clickMe = setInterval(function() {
         profil.style.filter = "grayscale(1) drop-shadow(0 0 2rem rgb(160, 160, 160))";
         setTimeout(function() {
@@ -125,12 +95,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }, 500);
     }, 1000);
 
-    var owl = $('.owl-carousel');
-    owl.owlCarousel();
+    // var owl = $('.owl-carousel');
+    // owl.owlCarousel();
 
+    //Changement couleur background
     async function loopElementColor() {
         let hue = 0;
-
         while (true) {
             background.style.filter = `hue-rotate(${hue}deg)`;
             hue += 10;

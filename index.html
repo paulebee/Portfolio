@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <title>Paul Lebée - Portfolio</title>
+    <meta name="description" content="Portfolio de Paul Lebée, étudiant en 3ème année de BUT MMI.">
+    <meta property="og:site_name" content="https://paul-lebee.fr">
+    <meta name="keywords" content="paul lebée portofolio BUT MMI"/>
+    <meta name="author" content="Paul Lebée">
+    <meta name="robots" content="index, follow">
     <link rel="icon" href="/images/favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Young+Serif" rel="stylesheet">
@@ -17,29 +22,31 @@
 </head>
 <body>
     <canvas id="canvas"></canvas>
-    <nav class="navbar navbar-expand-lg navbar-light mt-2" id="navbar" >
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#profilPart">Accueil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#competences">Compétences</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Contact</a>
-                    </li>
-                </ul>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light mt-2" id="navbar" >
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#profilPart">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#competences">Compétences</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#portfolio">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#portfolio">Contact</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <section class="pb-5" id="profilPart">
         <div class="div1"></div>
@@ -48,7 +55,7 @@
                 <div class="col flex-grow-1"></div>
                 <div class="col-4" id="profilDiv">
                     <img src="images/profil.jpg" id="profil" class="rounded-circle" alt="photo de profil">
-                    <p id="profilDesc" class="lead d-none">Actuellement étudiant en 3ème année de BUT MMI (Métiers du Multimédia et de l'Internet) à Saint-Lô, je suis à la recherche d'un stage dans 
+                    <p id="profilDesc" class="d-none">Actuellement étudiant en 3ème année de BUT MMI (Métiers du Multimédia et de l'Internet) à Saint-Lô, je suis à la recherche d'un stage dans 
                         le domaine du développement informatique lié au multimédia. Vous trouverez sur ce portfolio certains de mes projets
                         réalisés au cours de mes études.
                     </p>   
@@ -74,7 +81,7 @@
     <section id="competences" class="d-none">
         <canvas id="canvas2"></canvas>
         <div class="row">
-            <h1> Compétences</h1>
+            <h2> Compétences</h2>
             <div class="col-sm">
                 <h2 class="text-blue">Développement web</h2>
                 <ul>
@@ -120,7 +127,7 @@
         <div class="slide-container">
             <div class="slide" pos="1">
                 <div class="slide-1" >
-                    <h1>MONO-PIANO</h1>
+                    <h2>MONO-PIANO</h2>
                     <div class="categories">
                         <p class="text-red">
                         DISPOSITIF INTERACTIF &nbsp   
@@ -135,7 +142,7 @@
             </div>
            <div class="slide" pos="2" style="opacity:0;display:none">
              <div class="slide-2">
-                <img src="images/LogoStereo.png">
+                <img src="images/LogoStereo.png" alt="logo stereo">
                 <div class="categories">
                     <p class="text-blue">
                       DÉVELOPPEMENT WEB &nbsp   
@@ -153,7 +160,7 @@
           </div>
           <div class="slide" pos="3" style="opacity:0;display:none">
             <div class="slide-3">
-                <h1>PROJET UNITY</h1>
+                <h2>PROJET UNITY</h2>
                 <div class="categories">
                     <p class="text-red">
                        DISPOSITIF INTERACTIF &nbsp  
@@ -171,7 +178,7 @@
           </div>
           <div class="slide" pos="4" style="opacity:0;display:none">
             <div class="slide-4">
-                <h1>QUOTIDIEN <br> NUMÉRIQUE</h1>
+                <h2>QUOTIDIEN <br> NUMÉRIQUE</h2>
                 <div class="categories">
                     <p class="text-blue">
                         DÉVELOPPEMENT WEB &nbsp 
@@ -189,7 +196,7 @@
           </div>
           <div class="slide" pos="5" style="opacity:0;display:none">
             <div class="slide-5">
-                <img src="images/LogoToubo.png">
+                <img src="images/LogoToubo.png" alt="logo toubo">
                 <div class="categories">
                     <p class="text-blue">
                         DÉVELOPPEMENT WEB &nbsp  
@@ -207,7 +214,7 @@
           </div>
           <div class="slide" pos="6" style="opacity:0;display:none">
             <div class="slide-6">
-                <h1>FLYERS</h1>
+                <h2>FLYERS</h2>
                 <div class="categories">
                     <p class="text-orange">
                         DESIGN &nbsp 
@@ -237,10 +244,9 @@
         <footer class="d-none">
             <div class="text-center">
                 <div class="row">
-                    <!-- <hr class=""/> -->
                     <p class="col-sm mt-2">Copyright Paul Lebée - 2023</p>
                     <h2 class="col-sm" id="contactLink">Contact</h2>
-                    <a class="col-sm" href="mentionsLegales.html">Mentions Légales</a>
+                    <a class="col-sm" href="/mentionsLegales/mentionsLegales.html">Mentions Légales</a>
                 </div>
                 <div class="contactLink">
                     <a href="https://www.linkedin.com/in/paul-leb%C3%A9e-83a490233/">
@@ -259,68 +265,64 @@
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header border-0 ms-3">
-                        <h1 class="modal-title w-100 mb-1" id="popupArticleLabel">Mono-Piano</h1>
+                        <h2 class="modal-title w-100 mb-1" id="popupArticleLabel">Mono-Piano</h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body"> 
-                        <div class="owl-carousel owl-modal owl-theme mx-auto" >
-                            <div class="item">
-                                <p class="mx-auto modal-bold">
-                                    Dans le cadre de mon BUT MMI, j'ai dû effectuer un stage en 
-                                    entreprise afin de mettre en œuvre les compétences acquises au cours de ma formation dans un
-                                    contexte professionnel. J'ai donc réalisé un stage de 14 semaines au sein de PUCE MUSE, une 
-                                    association d'art numérique spécialisée dans la musique visuelle. L'objectif de 
-                                    ce stage était le développement d'un logiciel de Musique Assistée par Ordinateur (MAO) 
-                                    appelé Mono-Piano.
-                                </p>
+                        <h3>Contexte</h3>
+                        <p>
+                            Dans le cadre de mon BUT MMI, j'ai dû effectuer un stage en 
+                            entreprise afin de mettre en œuvre les compétences acquises au cours de ma formation dans un
+                            contexte professionnel. J'ai donc réalisé un stage de 14 semaines au sein de PUCE MUSE, une 
+                            association d'art numérique spécialisée dans la musique visuelle. L'objectif de 
+                            ce stage était le développement d'un logiciel de Musique Assistée par Ordinateur (MAO) 
+                            appelé Mono-Piano.
+                        </p>
+                        <h3>Le Mono-Piano</h3>
+                        <p> Le Mono-Piano s'inspire d'une ancienne application de PUCE MUSE appelée
+                            le Méta-Piano. À l'origine, le Méta-Piano est une création du musicien et chercheur Jean Haury. L'objectif 
+                            de cette application est de permettre à n'importe qui d'interpréter n'importe quelle partition au piano, quel 
+                            que soit son niveau.<br><br> Chaque fois que l'utilisateur appuie et relâche les boutons du support de son choix 
+                            (clavier, manette, ...), la note ou l'accord à venir dans la partition est joué. Cela laisse donc à 
+                            l'utilisateur une notion d'interprétation, puisqu'il choisit la manière dont il joue (vitesse, intensité).
+                        </p>
+                        <h3>L'affichage</h3>
+                        <p>
+                            Pour le développement du Mono-Piano, j'ai utilisé le code de l'ancienne application Méta-Piano comme 
+                            base de travail. En plus de m'assurer que les notes étaient correctement jouées lors de l'appui de l'utilisateur 
+                            sur les touches, j'ai également dû mettre en oeuvre l'affichage. <br><br>Cet affichage sous la forme d'un 
+                            piano roll, permet de visualiser les notes à venir dans la partition. J'ai veillé à ce que l'affichage 
+                            soit correct par rapport à la partition et qu'il réagisse de manière appropriée aux actions de l'utilisateur. 
+                            De plus, j'ai ajouté des paramètres de personnalisation tels que la couleur, le nombre de notes affichées 
+                            et la largeur des notes. 
+                        </p>
+                        <figure class="figure text-center col">
+                            <img src="images/monoP1.png" class="figure-img img-fluid rounded" alt="Affichage des notes">
+                            <figcaption class="figure-caption">Affichage des notes</figcaption>
+                        </figure>
 
-                                <figure class="figure text-center col">
-                                    <img src="images/monoP1.png" class="figure-img img-fluid rounded w-50" alt="Affichage des notes">
-                                    <figcaption class="figure-caption">Affichage des notes</figcaption>
-                                </figure>
-                                   
-                                <p class="m-3 text-justify col mx-auto"> Le Mono-Piano s'inspire d'une ancienne application de PUCE MUSE appelée
-                                     le Méta-Piano. À l'origine, le Méta-Piano est une création du musicien et chercheur Jean Haury. L'objectif 
-                                     de cette application est de permettre à n'importe qui d'interpréter n'importe quelle partition au piano, quel 
-                                     que soit son niveau.<br><br> Chaque fois que l'utilisateur appuie et relâche les boutons du support de son choix 
-                                     (clavier, manette, ...), la note ou l'accord à venir dans la partition est joué. Cela laisse donc à 
-                                     l'utilisateur une notion d'interprétation, puisqu'il choisit la manière dont il joue (vitesse, intensité).
-                                    <br><br>
-                                    Pour le développement du Mono-Piano, j'ai utilisé le code de l'ancienne application Méta-Piano comme 
-                                    base de travail. En plus de m'assurer que les notes étaient correctement jouées lorsque l'utilisateur 
-                                    appuie sur les touches, j'ai également dû m'occuper de l'affichage. <br><br>Cet affichage sous la forme d'un 
-                                    piano roll, permet de visualiser les notes à venir dans la partition. J'ai veillé à ce que l'affichage 
-                                    soit correct par rapport à la partition et qu'il réagisse de manière appropriée aux actions de l'utilisateur. 
-                                    De plus, j'ai ajouté des paramètres de personnalisation tels que la couleur, le nombre de notes affichées 
-                                    et la largeur des notes. 
-                                </p>
-                                
-                                
-                            </div>
-                            <div class="item">
-                                <p class="mx-auto">Une nouveauté par rapport à l'ancienne version de l'application était l'ajout d'un 
-                                    parseur MIDI. Les fichiers MIDI sont des fichiers utilisés pour partager des partitions musicales. L'objectif de ce 
-                                    parseur est de permettre à l'utilisateur d'importer n'importe quel fichier MIDI pour pouvoir le jouer
-                                    grâce au Mono-Piano. Étant donné que le Mono-Piano utilise un format spécifique pour lire les partitions, 
-                                    il a donc fallu que je développe un parseur transformant les fichiers MIDI en ce format.
-                                </p>
-                                <figure class="figure text-center">
-                                    <img src="images/monoP2.png" class="figure-img img-fluid rounded w-50" alt="Résultat du parseur MIDI">
-                                    <figcaption class="figure-caption mx-auto">Résultat du parseur MIDI, lisible par le Mono-Piano</figcaption>
-                                </figure>
-                            </div>
-                            <div class="item justify-content-center">
-                                <p class="m-3 mx-auto">La dernière étape était d'intégrer le logiciel dans un template d'interface Mono puisque toutes les 
-                                    applications Mono de PUCE MUSE ont une interface similaires. En raison de la durée limitée de mon stage je n'ai pas mis en 
-                                    place moi même l'interface mais j'ai veillé à ce que le code soit le plus clair est commenté possible pour pour permettre une 
-                                    intégration rapide.  
-                                </p>
-                                <figure class="figure text-center">
-                                    <img src="images/monoP3.png" class="figure-img img-fluid rounded w-75" alt="Interface de Mono-Map">
-                                    <figcaption class="figure-caption">Interface de Mono-Map, un logiciel du groupe Mono</figcaption>
-                                </figure>
-                            </div>
-                        </div>
+                        <h3>Le parseur MIDI</h3>
+                        <p>Une nouveauté par rapport à l'ancienne version de l'application était l'ajout d'un 
+                            parseur MIDI. Les fichiers MIDI sont des fichiers utilisés pour partager des partitions musicales. L'objectif de ce 
+                            parseur est de permettre à l'utilisateur d'importer n'importe quel fichier MIDI pour pouvoir le jouer
+                            grâce au Mono-Piano. Étant donné que le Mono-Piano utilise un format spécifique pour lire les partitions, 
+                            il a donc fallu que je développe un parseur transformant les fichiers MIDI en ce format.
+                        </p>   
+                        <figure class="figure text-center">
+                            <img src="images/monoP2.png" class="figure-img img-fluid rounded w-50" alt="Résultat du parseur MIDI">
+                            <figcaption class="figure-caption mx-auto">Résultat du parseur MIDI, lisible par le Mono-Piano</figcaption>
+                        </figure>
+
+                        <h3>L'interface</h3>
+                        <p>La dernière étape était d'intégrer le logiciel dans un template d'interface Mono puisque toutes les 
+                            applications Mono de PUCE MUSE ont une interface similaire. En raison de la durée limitée de mon stage je n'ai pas mis en 
+                            place moi-même l'interface mais j'ai veillé à ce que le code soit le plus clair est commenté possible pour permettre une 
+                            intégration rapide.  
+                        </p>
+                        <figure class="figure text-center">
+                            <img src="images/monoP3.png" class="figure-img img-fluid rounded" alt="Interface de Mono-Map">
+                            <figcaption class="figure-caption">Interface de Mono-Map, un logiciel du groupe Mono</figcaption>
+                        </figure>
                     </div>
                 </div>
             </div>
@@ -329,12 +331,12 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header border-0 ms-3">
-                        <h1 class="modal-title w-100" id="popupArticleLabel">STEREO</h1>
+                        <h2 class="modal-title w-100" id="popupArticleLabel">STEREO</h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                       <p class="mx-auto">Au cours de notre formation nous sommes amenés à mettre en pratique nos connaissances dans des projets 
-                          multidisiplinaires. <br>
+                        multidisciplinaires. <br>
                           Un de ces projets était la réalisation par groupe de trois personnes d'un site web de vente de musique en ligne. 
                           Une base de données comprenant des utilisateurs, des albums, des titres et des playlists nous était fournie. Un cahier des
                           charges détaillé spécifiait les attentes pour les différentes pages et fonctionnalités. C'était ensuite à nous de définir
@@ -366,7 +368,7 @@
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header border-0 ms-3">
-                        <h1 class="modal-title w-100" id="popupArticleLabel">Quotidien Numérique</h1>
+                        <h2 class="modal-title w-100" id="popupArticleLabel">Quotidien Numérique</h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -396,62 +398,57 @@
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header border-0 ms-3">
-                        <h1 class="modal-title w-100" id="popupArticleLabel">Projet Unity</h1>
+                        <h2 class="modal-title w-100" id="popupArticleLabel">Projet Unity</h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body"> 
-                        <div class="owl-carousel owl-modal owl-theme">
-                            <div class="item">
-                                <figure class="figure d-flex flex-column justify-content-center align-items-center">
-                                    <img src="images/ile1.png" class="figure-img img-fluid rounded w-75" alt="Image de l'île">
-                                    <figcaption class="figure-caption text-center">L'île du projet</figcaption>
-                                </figure>
-                                <p class="m-3 mx-auto">Réalisé lors de ma deuxième année de BUT MMI, le but de ce projet était de 
-                                    créer une expérience en réalité virtuelle sur une île grâce au moteur de jeu Unity. Pour cette 
-                                    expérience, nous devions créer un scénario simple. L'objectif de mon expérience était 
-                                    d'empêcher la destruction de l'île par une créature géante en trouvant son enfant caché quelque 
-                                    part sur l'île. Cette sorte de chasse au trésor visait à encourager l'exploration. <br><br> Afin de guider
-                                    l'utilisateur, des Personnages Non Joueurs (PNJ) étaient positionnés à différents endroits de
-                                    l'île. Chaque PNJ indiquait l'emplacement du prochain PNJ, guidant ainsi l'utilisateur à 
-                                    travers toute l'île. Le dernier PNJ donnait un indice sur l'emplacement de l'enfant.
-                                </p>
-                            </div>
-                            <div class="item">
-                                <figure class="figure d-flex flex-column justify-content-center align-items-center">
-                                    <img src="images/ile3.png" class="figure-img img-fluid rounded w-75" alt="Ville principale">
-                                    <figcaption class="figure-caption">Ville principale</figcaption>
-                                </figure>
-                                <p class="m-3 mx-auto">Cette île était constituée d'assets libres de droits disposés de manière
-                                    à créer un environnement cohérent et varié. L'expérience démarre dans une ville avec un château.
-                                    L'utilisateur traverse ensuite une forêt, une petite île isolée, un désert, des montagnes,
-                                    et enfin un volcan. Les PNJ servant de guide étaient présents dans chacun de ces environnements.<br><br>
-                                    En s'approchant, il était possible d'interagir avec eux pour afficher un dialogue. J'ai créé 
-                                    moi-même le modèle d'un de ces PNJ avec le logiciel de modélisation 3D Blender.
-                                </p>
-                                <p class="m-3 mx-auto">N'ayant pas de casque pour véritablement expérimenter la réalité virtuelle, 
-                                    j'ai utilisé mon téléphone pour contrôler la caméra en fonction des mouvements. Une partie de 
-                                    l'écran permettait d'avancer.
-                                </p>
-                            </div>
-                            <div class="item">
-                                <div class="row">
-                                    <figure class="figure col-sm text-center">
-                                        <img src="images/ile2.png" class="figure-img img-fluid rounded" alt="Cabane">
-                                        <figcaption class="figure-caption">Vue de la forêt</figcaption>
-                                    </figure>
-                                    <div class="row">
-                                        <figure class="figure col-sm text-center">
-                                            <img src="images/ile6.png" class="figure-img img-fluid rounded w-75" alt="Image île">
-                                            <figcaption class="figure-caption">Vue depuis l'île</figcaption>
-                                        </figure>    
-                                        <figure class="figure col-sm text-center">
-                                            <img src="images/ile4.png" class="figure-img img-fluid rounded" alt="Personnage Blender">
-                                            <figcaption class="figure-caption">Personnage dans Blender</figcaption>
-                                        </figure>
-                                    </div>   
-                                </div>
-                            </div>
-                        </div>    
+                        <h3>Contexte</h3>
+                        <p class="m-3 mx-auto">Réalisé lors de ma deuxième année de BUT MMI, le but de ce projet était de 
+                            créer une expérience en réalité virtuelle sur une île grâce au moteur de jeu Unity. Pour cette 
+                            expérience, nous devions créer un scénario simple. L'objectif de mon expérience était 
+                            d'empêcher la destruction de l'île par une créature géante en trouvant son enfant caché quelque 
+                            part sur l'île. Cette sorte de chasse au trésor visait à encourager l'exploration.
+                        </p>
+                        <figure class="figure text-center col">
+                            <img src="images/ile1.png" class="figure-img img-fluid rounded" alt="Image de l'île">
+                            <figcaption class="figure-caption text-center">L'île du projet</figcaption>
+                        </figure>
+                        <p>
+                            Afin de guider
+                            l'utilisateur, des Personnages Non Joueurs (PNJ) étaient positionnés à différents endroits de
+                            l'île. Chaque PNJ indiquait l'emplacement du prochain PNJ, guidant ainsi l'utilisateur à 
+                            travers toute l'île. Le dernier PNJ donnait un indice sur l'emplacement de l'enfant.
+                        </p>
+                        <figure class="figure text-center col">
+                            <img src="images/ile3.png" class="figure-img img-fluid rounded" alt="Ville principale">
+                            <figcaption class="figure-caption">Ville principale</figcaption>
+                        </figure>
+                        <p class="m-3 mx-auto">Cette île était constituée d'assets libres de droits disposés de manière
+                            à créer un environnement cohérent et varié. L'expérience démarre dans une ville avec un château,
+                            l'utilisateur traverse ensuite une forêt, une petite île isolée, un désert, des montagnes,
+                            et enfin un volcan. Les PNJ servant de guide étaient présents dans chacun de ces environnements.<br><br>
+                            En s'approchant, il était possible d'interagir avec eux pour afficher un dialogue. J'ai créé 
+                            moi-même le modèle d'un de ces PNJ avec le logiciel de modélisation 3D Blender.
+                        </p>
+                        
+                        <p class="m-3 mx-auto">N'ayant pas de casque pour véritablement expérimenter la réalité virtuelle, 
+                            j'ai utilisé mon téléphone pour contrôler la caméra en fonction des mouvements. Une partie de 
+                            l'écran permettait d'avancer.
+                        </p> 
+                        <div class="row">
+                            <figure class="figure col-sm text-center">
+                                <img src="images/ile2.png" class="figure-img img-fluid rounded" alt="Cabane">
+                                <figcaption class="figure-caption">Vue de la forêt</figcaption>
+                            </figure> 
+                            <figure class="figure col-sm text-center">
+                                <img src="images/ile4.png" class="figure-img img-fluid rounded w-75" alt="Personnage Blender">
+                                <figcaption class="figure-caption">Personnage dans Blender</figcaption>
+                            </figure>
+                        </div>   
+                        <figure class="figure text-center">
+                            <img src="images/ile6.png" class="figure-img img-fluid rounded w-75" alt="Image île">
+                            <figcaption class="figure-caption">Vue depuis l'île</figcaption>
+                        </figure>  
                     </div>
                 </div>
             </div>
@@ -460,17 +457,17 @@
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header border-0 ms-3">
-                        <h1 class="modal-title w-100    " id="popupArticleLabel">TOUBO</h1>
+                        <h2 class="modal-title w-100    " id="popupArticleLabel">TOUBO</h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <p class="m-3 modal-bold mx-auto">Réalisé lors de ma deuxième année de BUT MMI, l'objectif de ce projet était
-                            de réaliser par groupe de 3 un site de prévisions et statistiques météo.</p>
+                            de réaliser par groupes de 3 un site de prévisions et statistiques météo.</p>
                         <p class="m-3 mx-auto mb-4">Ce site responsive devait récupérer des informations météorologiques 
                             en temps réel tout en proposant des statistiques. Nous avons d'abord utilisé 
                             HTML/CSS pour créer la base du site et gérer l'affichage. Ensuite, nous avons récupéré les 
-                            informations sur une ville au choix via des requêtes sur l'API de Météo France. Pour réaliser
-                            le tableau de bord des statistiques quotidiennes, nous avons utilisé Chart.js. <br><br>Je me suis 
+                                informations sur une ville au choix via des requêtes sur l'API de Météo France. Pour réaliser
+                                le tableau de bord des statistiques quotidiennes, nous avons utilisé Chart.js. <br><br>Je me suis 
                             principalement occupé de la réalisation et de l'intégration d'un tableau de bord Google Looker 
                             Studio qui permettait d'obtenir des statistiques sur une période au choix.</p>
                         <div class="owl-carousel owl-modal owl-theme    ">
@@ -497,23 +494,23 @@
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header border-0 ms-3">
-                        <h1 class="modal-title w-100" id="popupArticleLabel">Flyers</h1>
+                        <h2 class="modal-title w-100" id="popupArticleLabel">Flyers</h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <div class="row">
-                            <figure class="figure text-center col-sm">
-                                <img src="images/flyer1.png" class="figure-img img-fluid rounded w-75" alt="Recto Flyer">
-                                <figcaption class="figure-caption">Présentation de Saint-Lô</figcaption>
-                            </figure>
-                            <figure class="figure text-center col-sm">
-                                <img src="images/flyer2.png" class="figure-img img-fluid rounded w-75" alt="Verso Flyer">
-                                <figcaption class="figure-caption">Présentation du BUT MMI</figcaption>
-                            </figure>
-                        </div>
-                        <p class="m-3 mx-auto">Un autre projet réalisé lors de mon BUT MMI était la réalisation de flyers de présentation de l'IUT, de la formation ainsi que de la ville de Saint-Lô. 
+                        <p class="m-3 mx-auto">Un autre projet réalisé lors de mon BUT MMI était la création de flyers de présentation de l'IUT, de la formation ainsi que de la ville de Saint-Lô. 
                             Ces flyers en anglais ayant pour but d'attirer des élèves étrangers pour un échange universitaire. 
                         </p>
+                        <div class="owl-carousel owl-modal owl-theme" >
+                            <figure class="figure text-center item">
+                                <img src="images/flyer1.jpg" class="figure-img img-fluid rounded w-50" alt="Recto Flyer">
+                                <figcaption class="figure-caption">Présentation de Saint-Lô</figcaption>
+                            </figure>
+                            <figure class="figure text-center item">
+                                <img src="images/flyer2.jpg" class="figure-img img-fluid rounded w-50" alt="Verso Flyer">
+                                <figcaption class="figure-caption">Présentation du BUT MMI</figcaption>
+                            </figure>
+                        </div>  
                     </div>
                 </div>
             </div>
