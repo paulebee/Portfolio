@@ -11,30 +11,31 @@
     <meta name="robots" content="index, follow">
     <link rel="icon" href="../images/favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Young+Serif" rel="stylesheet">
     <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body class="d-flex flex-column min-vh-100">
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light mt-2" id="navbar" >
-            <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="../#profilPart">Accueil</a>
+                            <a class="nav-link active" aria-current="page" href="../#">Accueil</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../#competences">Compétences</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../#portfolio">Portfolio</a>
+                            <a class="nav-link" href="../#projetsTitre">Projets</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../#portfolio">Contact</a>
+                            <a class="nav-link" href="../#footer">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -43,7 +44,7 @@
     </header>
     
     <section>
-        <div style="margin-left: 4em; margin-right: 4em;">
+        <div style="margin-left: 4em; margin-right: 4em;margin-top: 4em;">
             <h1>Mentions Légales</h1>
             <p> Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance
                 en l'économie numérique, il est précisé aux utilisateurs du site paul-lebee.fr l'identité
@@ -62,22 +63,27 @@
             </div>
         </div>
     </section>
-    <footer class="mt-auto">
+    
+    <footer style="position: absolute; bottom: 0; width: 100%;">
+        <hr style="border:none;border-top: 1px dotted black;">
         <div class="text-center">
-            <div class="row">
-                <!-- <hr class=""/> -->
+            <div class="rowflex" style="align-items: center;">
                 <p class="col-sm mt-2">Copyright Paul Lebée - 2023</p>
-                <h2 class="col-sm" id="contactLink">Contact</h2>
-                <p class="col-sm mt-2" id="mentionsLink"><u>Mentions légales</u></p>
+                <div>
+                    <h3 class="col-sm" id="contactLink">Contact</h3>
+                    <div class="contactLink">
+                        <a href="https://www.linkedin.com/in/paul-leb%C3%A9e-83a490233/">
+                            <img src="../images/logoLinkedIn.png" alt="logo LinkedIn">
+                        </a>
+                        <a href="mailto:p.lebee@orange.fr">
+                            <img src="../images/logoMail.png" alt="mail Logo">
+                        </a>
+                    </div>
+                </div>
+                <a class="col-sm" href="/mentionsLegales/mentionsLegales.html">Mentions Légales</a>
             </div>
-            <div class="contactLink">
-                <a href="https://www.linkedin.com/in/paul-leb%C3%A9e-83a490233/">
-                    <img src="../images/logoLinkedIn.png" alt="logo LinkedIn">
-                </a>
-                <a href="mailto:p.lebee@orange.fr">
-                    <img src="../images/logoMail.png" alt="mail Logo">
-                </a>
-            </div>
+            
+            <div>&nbsp;</div>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>

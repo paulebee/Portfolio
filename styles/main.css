@@ -1,201 +1,314 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* ===== Scrollbar CSS ===== */
-  /* Firefox */
-  * {
-    scrollbar-width: auto;
-    scrollbar-color: #c7c7c7 #ffffff;
-  }
-
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 18px;
-  }
-
-  *::-webkit-scrollbar-track {
-    background: #ffffff;
-  }
-
-  *::-webkit-scrollbar-thumb {
-    background-color: #c7c7c7;
-    border-radius: 11px;
-    border: 3px solid #ffffff;
-  }
-
-.text-orange{
-    color: rgb(255, 136, 25); 
+@keyframes anim1 {
+    from { left: -11vw; } 
+    to { top: 0; left: 111vw; } 
 }
-.text-red{
-    color: rgb(255, 0, 0); 
+@keyframes anim2 {
+    from { left: -11vw; } 
+    to { top: 40vw; left: 111vw; } 
 }
-.text-green{
-    color: rgb(0, 255, 0); 
-}
-.text-purple{
-    color: rgb(200, 0, 255); 
+@keyframes anim3 {
+    from { left: -11vw; } 
+    to { top: 80vw; left: 111vw; } 
 }
 
-.text-blue{
-    color: rgb(17, 0, 255); 
+.imgtest {
+    position: absolute;
+    width: 10vw;
+    height: auto;
 }
 
-body{
-    position: relative;
+* {
+scrollbar-width: auto;
+scrollbar-color: #c7c7c7 #ffffff;
+font-family: Poppins, sans-serif;
+}
+
+*::-webkit-scrollbar {
+width: 18px;
+}
+
+*::-webkit-scrollbar-track {
+background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+background-color: #c7c7c7;
+border-radius: 11px;
+border: 3px solid #ffffff;
+}
+
+html {
+    font-size: 100%; /* 16px */
+}
+
+body {
     margin: 0;
     padding: 0;
-    min-height: 100vh;
 }
 
-h1,h2 {
-    font-family: 'Young Serif';
-}
-
-p, li, a, h3 {
-    font-family: 'Montserrat';
-}
-
-.title{
-    font-size: 125px;
-    line-height: 1;
-}
-
-br {
-    display:block; 
-    margin-top:12px; 
-    line-height:22px;
-}
-
-.card{
-    background-color:  rgb(254, 253, 248);
-}
-
-.figure-img {
+header {
+    position: fixed;
     width: 100%;
+    background-color: hsl(0, 0%, 100%, 50%);
+    z-index: 1000;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
 }
 
-.page-section>.content-wrapper { display: flex; flex-basis: 100%; width: 0; }
-
-header{
-    opacity: 0;
-    transition: all 1s ease-in-out;
-    position:sticky;
-    top: 0;
-    z-index: 5;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    background-color: rgb(255, 255, 255);
+h2,h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
 }
 
-#welcomeTitle{
-    margin-top: -11em;
-    position: relative; 
+#portfolioTitre {
+    position: fixed; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
     z-index: -1;
-    transition: all 1s ease-in-out;
 }
 
-#profil{
-    position: relative;
-    z-index: 2;
-    width: 22.5em;
-    cursor:pointer;
-    filter: grayscale(1) drop-shadow(0 0 0.75rem rgb(160, 160, 160));
-    transition: filter 0.3s ease-in-out, opacity 1.5s ease-in-out, margin-top 1s ease-in-out;
-    margin-left: -5em;
-    margin-top: 5em;
+#portfolioTitre img:first-of-type, #projetsTitre{
+    width: 40%; 
+    text-align: center;
 }
 
-#profilBg{
-    position: relative;
-    z-index: -1;
-    width: 19.7em;
-    transform: scale(2.4);
-    margin-top: 2em;
-    margin-left: -3em;
-    transition: all 1s ease-in-out;
+#portfolioTitre #sousTitre{
+    width: 15%; 
+    position: absolute;
+    top: 80%;
 }
 
-#profilDesc{
-    position: relative;
-    width: 20em;    
-    color: rgb(40, 40, 40);
-    margin-top: 11.8em;
-    margin-bottom: -18em;
-    margin-left: -3.5em;
-    z-index: 1;
-    transition: opacity 1.5s ease-in-out;
-}
-
-#profilPart {
-    position: sticky;
-    top: 0;
-    left: 0;
+.bandeau {
+    position: fixed;
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    z-index: -2;
 }
 
-#background {
-    transition: opacity 1s ease-in-out, filter 0.5s ease-in-out; 
-    position: absolute;
-    z-index:-2; 
+.bandeau-contenu {
+    display: flex;
+    animation: defilement 140s linear infinite; /* Animation du défilement */
+    height: 100vh; 
+}
+
+.bandeau-contenu img {
+    width: 100%; /* Chaque image prend toute la largeur du conteneur */
+    flex-shrink: 0; /* Empêche les images de se rétrécir */
+}
+
+#paysageImg {
     width: 100%; 
-    left:0; 
-    top:0em; 
+    margin-top: 18%;
 }
 
-.btn:hover {
-    background-color: rgb(199, 199, 199);
-    color: rgb(255, 255, 255);
+#accueilBtm {
+    height: 20vh; 
+    /* backdrop-filter: blur(10px); */
+    background: linear-gradient(360deg, rgb(236, 236, 236) 0%, rgba(250,250,250,0) 100%);
+    display: flex;
+    justify-content: center; 
 }
 
-hr {
-    margin: 0 auto;
-    color: rgb(166, 166, 166);
+#accueilBtm div {
+    display: flex;
+    flex-direction: row;
+    margin-top: 60px;
 }
 
-.card-body > .btn {
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+#accueilBtm p {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(0, 0, 0)    ;
 }
 
-.trail { 
+#accueilBtm .chevron {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent; /* Left angled line */
+    border-right: 10px solid transparent; /* Right angled line */
+    border-top: 10px solid black; /* Top border forms the downward triangle */
+    margin-top: 20px;
+    margin-inline: 18px;
+}
+
+.aPropos {
+    display: flex; 
+    align-items: center;
+    padding-inline: 20em; 
+    padding-top:2em;
+    padding-bottom: 2em;
+    background-color: rgb(48, 48, 48);
+}
+
+.aPropos #PhotoProfil {
+    object-fit: contain;
+    margin-inline: 4em;
+    width: 11em;
+    margin-bottom: 20px;
+}
+
+.apercu img {
+    height: 15vh;
+    width: 12.5%;
+    object-fit: cover;
+}
+
+@keyframes defilement {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+#aPropos {
+    width: 20%;
     position: absolute;
-    height: 6px; width: 6px;
-    border-radius: 3px;
-    background: teal;
-    filter: blur(5px);
+    z-index: 2;
+    left: 5em;
 }
 
-canvas{
-    position: absolute; 
-    z-index: -1;
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    display: block;  
-    filter: blur(4px);
-    /* height: 100%; */
+h2 {
+   text-align: center; 
+   font-weight: bold; 
+   font-size: 50px;
+}
+
+.titreContour {
+    color: white; /* Text color */
+    text-shadow:
+        2px 2px 2px #c575c2,
+        -2px 2px 2px #c575c2,
+        2px -2px 2px #c575c2,
+        -2px -2px 2px #c575c2,
+        0px 2px 2px #c575c2,
+        0px -2px 2px #c575c2,
+        2px 0px 2px #c575c2,
+        -2px 0px 2px #c575c2;
+    font-size: 400%;
+    width: 100% !important;
+}
+
+.titreContour2 {
+    color: white;
+    text-shadow:
+    1px 1px 1px #cacaca,
+    -1px 1px 1px #cacaca,
+    1px -1px 1px #cacaca,
+    -1px -1px 1px #cacaca,
+    0px 1px 1px #cacaca,
+    0px -1px 1px #cacaca,
+    1px 0px 1px #cacaca,
+    -1px 0px 1px #cacaca;
 } 
 
-#portfolio{
-    z-index: 4;
-    margin-top: 20em;
-    position: sticky;
-    top: 0;
+#competences {
+    width: 100%;             
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
 }
 
-footer{
+#tableComp{
+    /* margin-inline: 10em; */
+    /* border-collapse: separate; 
+    border-spacing: 3em; */
+    width: 100%;
+}
+
+#tableComp tr {
+    border-bottom: 1px #333;
+    border-style: dashed solid;
+    color: lightgray;
+    transition: color 0.5s ease-in-out, font-size 0.5s ease-in-out;
+    padding-inline: 10%;
+}
+
+#tableComp td{
+    padding: 1em;
+    
+}
+
+#tableComp td:first-of-type{
+    width: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    padding-left: 10em;
+}
+
+#tableComp td:first-of-type.visible{
+    opacity: 1;
+}
+
+#tableComp img {
+    width: 10em;
+}
+
+#tableComp h3{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.title0, .text-blue {
+    color: rgb(42, 27, 255)
+}
+
+.title1, .text-red {
+    color: red
+}
+
+.title2, .text-purple {
+    color: rgb(163, 0, 163)
+}
+
+.title3, .text-orange {
+    color: orange
+}
+
+.hidden {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.hidden2 {
+    opacity: 0;
+}
+
+.hidden3 > * {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.visible {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+#footer{
     position: relative;
     top: 0;
     background-color: rgb(255, 255, 255);
     overflow: hidden;
-    margin-right: 0.5em;
     z-index: 6;
-    padding-top: 2em;
+    margin-top: 50em;
 }
-footer img {
+
+footer hr {
+    border:none;
+    border-top: 1px dotted black;
+    margin-top: 0;
+}
+
+footer .rowflex img {
     width: 2em;
     margin-left: 0.25em; 
     margin-right: 0.25em; 
@@ -209,207 +322,172 @@ footer .contactLink {
     gap: 1em; 
 }
 
-footer a {
-    color: rgb(0, 0, 0, 0.8);
+.rowflex {
+    display: flex;
+    justify-content: center;
 }
 
-#competences {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    padding-right: 1em;
-    padding-top: 5em;
-    padding-bottom: 24em;
-    z-index: 3;
-    height: 100%;
-    background-color: rgb(250, 250, 250);
+.rowflex img {
+    width: 90%;
 }
 
-#competences > div {
-    z-index: 2;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-inline: 0.5em;
-    height: 100%;
+@media screen and (max-width: 1260px) {
+    .aPropos {
+        padding-inline: 8em;
+    }
 }
 
-#competences > div > div {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-inline: 0.5em;
-    border: lightgray 1px solid;
-    border-radius: 10px;
-    margin-bottom: 1em;
-    background-color: rgb(255, 255, 255,0.7);
-}
-
-#competences h2 {
-    text-align: center;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-}
-
-#competences h2 {
-    font-size: 1.5em;
-    font-family: "Montserrat";
-    padding: 1em;
-    padding-bottom: 0.5em;
-    font-weight: bold;
-    text-align: center;
-}
-
-#competences li {
-    margin-top: 1em;
-    font-size: 1.1em;
-}
-
-
-@media screen and (max-width: 1200px) {
-
+@media screen and (max-width: 1060px) {
     html {
-        font-size: 0.8rem;
+        font-size: 80%;
     }
 
-    .title{
-        font-size: 8em;
+    p, li {
+        font-size: 16px;
     }
 
-    #background{
-        margin-top: 20em;
-        scale: 1.5;
+    #portfolioTitre {
+        margin-top: 20%;
+    }
+
+    #accueilBtm p {
+        font-size: 20px;
+    }
+
+    #accueilBtm .chevron {
+        margin-top: 12px;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 10px solid black;
+    }
+
+    footer a {
+        font-size: 16px;
     }
 }
 
-@media screen and (max-width: 948px) {
-
+@media screen and (max-width: 890px) {
     html {
-        font-size: 0.8rem;
+        font-size: 60%;
     }
 
-    .title{
-        font-size: 8m;
+    .bandeau-contenu {
+        height: 100vh;
     }
 
-    #background{
-        margin-top: 40em;
+    #tableComp img {
+        width: 14em;
     }
 
-    #competences {
-        font-size: 0.9em;
-        padding-top: 6.5em;
-    }
-}
-
-@media screen and (max-width: 700px) {
-
-    #profilDiv{
-        margin-top: 8em;
+    #tableComp td:first-of-type {
+        padding-left: 10px;
     }
 
-    #popupArticleLabel{
-        font-size: 3em;
-    }
-
-    .btn-close{
-        position: absolute;
-        top: 2em;
-        right: 6em;
-    }
-
-    #background{
-        margin-top: 60em;
-        scale: 2;
-    }
-    #competences {
-        font-size: 0.8em;
-        padding-top: 6.5em;
-    }
-
-    #profilDiv{
-        margin-right: 45%;
-        width: 8em;
-    }
-
-    .title{
-        font-size: 7em;
-        margin-top: 2em;
+    .titreContour {
+        font-size: 600%;
     }
 
 }
 
-@media screen and (max-width: 575px) {
+/*mode tablette*/
+@media screen and (max-width: 720px) {
 
-    #competences {
-        padding-right: 2em;
+    #portfolioTitre img:first-of-type, #projetsTitre{
+        width: 50%; 
     }
-
-    #competences {
-        font-size: 0.7em;
-        padding-top: 8.5em;
-    }
-
-    #competences h2 {
-        padding-top: 0.2em;
-        padding-bottom: 0.2em;
-    }
-    
-    #competences li {
-        margin-top: 0.5em;
+    #portfolioTitre #sousTitre{
+        width: 20%; 
     }
 
-    #competences > div > div {
-        min-height: 15vh;
+    .bandeau-contenu {
+        height: 90vh;
     }
 
-    .flex-grow-1 {
-        margin-left: -50%;
-    }
-    
-    #background{
-        margin-top: 70em;
-        scale: 2.5;
+    #portfolioTitre {
+        margin-top: 30%;
     }
 
-    .btn-close{
-        top: 2em;
-        right: 1em;
-    } 
-
-    #mentionsContent{
-        margin: 0;
+    #tableComp img {
+        width: 12em;
     }
-}
-@media screen and (max-width: 450px) {
-    #welcomeTitle{
-        font-size: 0.7em;
-    }
-}
 
-@media screen and (min-height: 1070px){
-    #background{
-        margin-top: 15em;
+    #tableComp li {
+        font-size: 16px;
+    }
+
+    .aPropos #PhotoProfil {
+        width: 20em;
+    }
+
+    .aPropos div {
+        flex-direction: column;
+    }
+
+    .aPropos h3 {
+        font-size: 30px;
+    }
+
+    footer a {
+        font-size: 16px;
+    }
+
+    footer div div:first-child {
+        flex-direction: column;
     }
 }
 
-@media screen and (max-width: 1200px) and (min-height: 1070px){
-    #background{
-        margin-top: 30em;
+/*mode telephone*/
+@media screen and (max-width: 490px) {
+    html {
+        font-size: 50%;
+    }
+
+    #portfolioTitre img:first-of-type, #projetsTitre {
+        width: 80%; 
+    }
+    #portfolioTitre #sousTitre{
+        width: 30%; 
+    }
+
+    .bandeau-contenu {
+        height: 90vh;
+    }
+
+    #portfolioTitre {
+        margin-top: 60%;
+    }
+
+    #paysageImg {
+        width: 150%;
+        margin-top: 80%;
+        overflow: hidden;
+    }
+
+    .aPropos {
+        padding-inline: 10%; 
+    }
+
+    #tableComp tr {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    #tableComp td:first-of-type {
+        width: 100%;
+    }
+
+    #tableComp img {
+        width: 16em;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #tableComp h3 {
+        font-size: 20px;
+    }
+
+    footer h2 {
+        font-size: 10px;
     }
 }
-
-@media screen and (max-width: 948px) and (min-height: 1070px){
-    #background{
-        margin-top: 40em;
-    }
-}
-
-@media screen and (max-width: 575px) and (min-height: 1070px){
-    #background{
-        margin-top: 60em;
-    }
-}
-

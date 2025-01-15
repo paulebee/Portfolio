@@ -1,116 +1,138 @@
 document.addEventListener('DOMContentLoaded', (event) => {
 
-    $('.owl-modal').owlCarousel({
-        items: 1,
-        margin: 10,
-        loop: true, 
-        dots: true,
-        // mouseDrag : true,
+    let nextProjectDivs = document.querySelectorAll('.nextProject');
+
+    let project1 = document.getElementById('project1');
+
+    let projectsDiv = document.querySelectorAll('.projectImg');
+
+    let buttons = document.querySelectorAll('.btn');
+
+    let returnArrows = document.querySelectorAll('.returnArrow');
+
+    let footer = document.querySelector('footer');
+
+    let positions = ["P1", "P2", "P3", "P4", "P5","P6","P7"];
+
+    let order= [1,2,3,4,5,6,7];
+
+    //Ajoute les addEventListener sur les croix pour fermer les projets et sur les flèches pour revenir en haut de la page
+    projectsDiv.forEach((projectDiv) => {
+        let nextProjectDiv = projectDiv.querySelector('.nextProject');
+        nextProjectDiv.addEventListener('click', (event) => {
+            changePositions();
+            footer.classList.remove('hidden');
+        });
+
+        let returnArrow = projectDiv.querySelector('.returnArrow');
+        returnArrow.addEventListener('click', (event) => {
+            document.getElementById("projetsTitre").scrollIntoView({behavior: 'smooth'});
+        });
     });
-    
-    let background = document.getElementById('background'),
-     profilBg = document.getElementById('profilBg'),
-     profilDesc = document.getElementById('profilDesc'),
-     profil = document.getElementById('profil'),
-     hasClicked = false,
-     portfolio = document.getElementById('portfolio'),
-     canvas = document.getElementById("canvas"),
-     footer = document.querySelector('footer'),
-     navbar = document.querySelector('header');
-     body = document.body,
-     competences = document.getElementById('competences'),
-    html = document.documentElement;
-    
-    let origin = 0;
+ 
+    buttons.forEach((button, index) => {
+        button.addEventListener('click', (event) => {
+            let projectDiv = projectsDiv[index];
+            projectDiv.querySelector('div:nth-child(2)').classList.remove('slide');
+            projectDiv.querySelector('div:nth-child(2)').classList.add('slideMini');
+            button.classList.add('d-none');
+            projectDiv.querySelector('.details').classList.remove('d-none');
+            footer.classList.add('hidden');
+        });
+    });
 
+    function changePositions(){
+        let lastElement = order.pop();
+        order.unshift(lastElement);
 
-    //Transition avec d-none
-    function opacityTransition(element, way){
-        if(way == 'up'){
-            element.classList.remove('d-none');
-            element.style.opacity = 0;
-            setTimeout(function() {
-                element.style.opacity = 1;
+        projectsDiv.forEach((projectDiv, index) => {
+            if (positions.some(className => projectDiv.classList.contains(className))) {
+                projectDiv.classList.remove(...positions);
+                projectDiv.classList.add("P" + (order[index])); 
+                if(order[index] > 5){
+                    projectDiv.classList.add('moveOut');
+                    setTimeout(() => {
+                        projectDiv.querySelector('.details').classList.add('d-none');
+                    }, 1000);
+                }
+                if(order[index] == 5){
+                    projectDiv.classList.remove('moveOut');
+                    projectDiv.querySelector('.nextProject').classList.add('hidden');
+                    projectDiv.querySelector('div:nth-child(2)').classList.remove('slideMini');
+                    projectDiv.querySelector('div:nth-child(2)').classList.add('slide');
+                    projectDiv.querySelector('button').classList.remove('d-none');
+                }
+                if(order[index] == 1){
+                    projectDiv.querySelector('.nextProject').classList.remove('hidden');
+                }
             }
-            , 500);
-        }
-        if(way == 'down'){
-            element.style.opacity = 1;
-            setTimeout(function() {
-                element.style.opacity = 0;
-            }
-            , 500);
+        });
+    }
+
+    //Animation affichage des projets
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting){ 
+                project1.classList.remove('P1first');
+                projectsDiv.forEach((projectDiv, index) => {
+                    projectDiv.classList.add(positions[index]);
+                });
+                observer.unobserve(entry.target);
+            } 
+        });
+    }, {
+        root: null,
+        rootMargin: '-50% 50px -50% 50px', 
+        threshold: 0
+    });
+
+    observer.observe(project1);
+
+    //Animation affichage titre
+    const elementToHide = document.getElementById('portfolioTitre');
+    const triggerElement = document.querySelector('.aPropos');
+    function checkPosition() {
+        const triggerRect = triggerElement.getBoundingClientRect();
+        const hideRect = elementToHide.getBoundingClientRect();
+    
+        if (triggerRect.top < hideRect.top) {
+          elementToHide.classList.add('hidden2');
+        } else {
+          elementToHide.classList.remove('hidden2');
         }
     }
 
-    //Actions survol profil
-    profil.addEventListener('mouseover', function() {
-        portfolio.classList.remove('d-none');
-        this.classList.add('d-none');
-        opacityTransition(profilDesc, 'up');
-        opacityTransition(profilBg, 'up');
-        hasClicked = true;
-        clearInterval(clickMe);
-        opacityTransition(background, 'up');
-        navbar.style.opacity = 1;
-        footer.classList.remove('d-none');
-        competences.classList.remove('d-none');
+    window.addEventListener('scroll', checkPosition);
 
-        setTimeout(function() {
-            canvas.width = window.innerWidth;
-            canvas.height = Math.max( body.scrollHeight, body.offsetHeight, 
-                html.clientHeight, html.scrollHeight, html.offsetHeight );
-            console.log(canvas.height);
-            origin = Math.max(
-                document.body.scrollHeight,
-                document.body.offsetHeight,
-                document.documentElement.clientHeight,
-                document.documentElement.scrollHeight,
-                document.documentElement.offsetHeight
-            );
-        }, 1500);
-    });
-
-    //Réaparition profil
-    function clearProfile() {
-        if(hasClicked){
-            setTimeout(function() {
-                profilDesc.classList.add('d-none');
-                profilBg.classList.add('d-none');
-                opacityTransition(profil, 'up');
-                profil.style.filter = "grayscale(0)";
-            }, 1000);  
-            hasClicked = false;    
+    
+    //Disparition du "Découvrir"
+    let accueilBtm = document.getElementById('accueilBtm');
+    window.addEventListener('scroll', function(){
+        if(window.scrollY==0){
+            accueilBtm.classList.remove('hidden');
         } 
-    }
-    
-    profilBg.addEventListener('mouseout', clearProfile);
-    document.addEventListener('scroll', clearProfile);
-    
-    //Animation profil
-    let clickMe = setInterval(function() {
-        profil.style.filter = "grayscale(1) drop-shadow(0 0 2rem rgb(160, 160, 160))";
-        setTimeout(function() {
-            profil.style.filter = "grayscale(1) drop-shadow(0 0 0.75rem rgb(160, 160, 160))";
-        }, 500);
-    }, 1000);
-
-    // var owl = $('.owl-carousel');
-    // owl.owlCarousel();
-
-    //Changement couleur background
-    async function loopElementColor() {
-        let hue = 0;
-        while (true) {
-            background.style.filter = `hue-rotate(${hue}deg)`;
-            hue += 10;
-            await sleep(300);
+        else {
+            accueilBtm.classList.add('hidden');
         }
-    }
+    });
 
-    function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
+    let aPropos = document.querySelector('.aPropos');
+    const observer2 = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting){ 
+                console.log("test");
+                aPropos.classList.add('visible');
+                aPropos.classList.remove('hidden3');
+                
+                observer2.unobserve(entry.target);
+            } 
+        });
+    }, {
+        root: null,
+        rootMargin: '-50% 50px -20% 50px', 
+        threshold: 0
+    });
 
-    loopElementColor();
+    observer2.observe(aPropos);
+
 });
