@@ -50,6 +50,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 projectDiv.classList.remove(...positions);
                 projectDiv.classList.add("P" + (order[index])); 
                 if(order[index] > 5){
+                    projectDiv.querySelector('div:nth-child(2)').classList.remove('slideMini');
+                    projectDiv.querySelector('div:nth-child(2)').classList.add('slide');
                     projectDiv.classList.add('moveOut');
                     setTimeout(() => {
                         projectDiv.querySelector('.details').classList.add('d-none');
