@@ -128,6 +128,10 @@ html, body {
   background-image: url(../images/harmonizeBG.png);
 }
 
+.bg-eneville {
+  background-image: url(../images/eneville3.png);
+}
+
 .slide h2, .slideMini h2 {
   text-align: center;
   margin: 20px 0px 10px 0px;
@@ -339,7 +343,7 @@ html, body {
   .P4{
     width: 70%;
   }
-  .P5, .P6{
+  .P5, .P6 {
     width: 60%;
   }
 }

@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     let nextProjectDivs = document.querySelectorAll('.nextProject');
 
-    let project1 = document.getElementById('project1');
+    let project1 = document.querySelector('.projectImg');
 
     let projectsDiv = document.querySelectorAll('.projectImg');
 
@@ -12,9 +12,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     let footer = document.querySelector('footer');
 
-    let positions = ["P1", "P2", "P3", "P4", "P5","P6","P7"];
+    let positions = ["P1", "P2", "P3", "P4", "P5","P6","P7", "P8"];
 
-    let order= [1,2,3,4,5,6,7];
+    let order= [1,2,3,4,5,6,7,8];
 
     //Ajoute les addEventListener sur les croix pour fermer les projets et sur les flèches pour revenir en haut de la page
     projectsDiv.forEach((projectDiv) => {
@@ -122,9 +122,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const observer2 = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting){ 
-                console.log("test");
-                aPropos.classList.add('visible');
-                aPropos.classList.remove('hidden3');
+                aPropos.querySelector(".hidden2").classList.add('visible');
+                
                 
                 observer2.unobserve(entry.target);
             } 

@@ -69,10 +69,13 @@ h2,h3 {
     align-items: center;
     margin-top: 10%;
     z-index: -1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -100%);
 }
 
 #portfolioTitre img:first-of-type, #projetsTitre{
-    width: 40%; 
+    width: 80%; 
     text-align: center;
 }
 
@@ -258,16 +261,16 @@ h2 {
     font-size: 30px;
 }
 
-.title0, .text-blue {
+.title1, .text-blue {
     color: rgb(42, 27, 255)
 }
 
-.title1, .text-red {
+.title2, .text-red {
     color: red
 }
 
-.title2, .text-purple {
-    color: rgb(163, 0, 163)
+.title0, .text-purple {
+    color: rgb(197, 22, 233)
 }
 
 .title3, .text-orange {
@@ -281,11 +284,6 @@ h2 {
 
 .hidden2 {
     opacity: 0;
-}
-
-.hidden3 > * {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
 }
 
 .visible {
@@ -346,9 +344,9 @@ footer .contactLink {
         font-size: 16px;
     }
 
-    #portfolioTitre {
+    /* #portfolioTitre {
         margin-top: 20%;
-    }
+    } */
 
     #accueilBtm p {
         font-size: 20px;
@@ -393,19 +391,17 @@ footer .contactLink {
 @media screen and (max-width: 720px) {
 
     #portfolioTitre img:first-of-type, #projetsTitre{
-        width: 50%; 
+        width: 100%; 
     }
-    #portfolioTitre #sousTitre{
-        width: 20%; 
-    }
+ 
 
     .bandeau-contenu {
         height: 90vh;
     }
 
-    #portfolioTitre {
+    /* #portfolioTitre {
         margin-top: 30%;
-    }
+    } */
 
     #tableComp img {
         width: 12em;
@@ -443,19 +439,17 @@ footer .contactLink {
     }
 
     #portfolioTitre img:first-of-type, #projetsTitre {
-        width: 80%; 
+        width: 150%; 
     }
-    #portfolioTitre #sousTitre{
-        width: 30%; 
-    }
+  
 
     .bandeau-contenu {
         height: 90vh;
     }
-
+/* 
     #portfolioTitre {
         margin-top: 60%;
-    }
+    } */
 
     #paysageImg {
         width: 150%;

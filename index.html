@@ -46,7 +46,7 @@
     <div id="portfolioTitre">
         <img src="./images/portfolioTitre.png" alt="Portfolio">
         <!-- <img src="./images/sousTitre.png" id="sousTitre"> -->
-        <h3 style="color:#F8EC12; text-align:center;transform:scale(1.5,1);">PAUL LEBEE <br> 2025</h3>
+        <h3 style="color:#ffde05; text-align:center;transform:scale(1.5,1);">PAUL LEBEE <br> 2025</h3>
     </div>
     <div class="bandeau">
         <div class="bandeau-contenu">
@@ -69,19 +69,30 @@
                 <i class="chevron"></i>
             </div>
         </div>
-        <div class="aPropos hidden3">
-            <div style="display: flex; align-items: flex-start; align-items: center; ">
+        <div class="aPropos">
+            <div class="hidden2" style="display: flex; align-items: flex-start; align-items: center; ">
                 <div>
                     <h3 class="titreContour2">Qui suis-je?</h3>
-                    <p style="color:rgb(245, 245, 245);">Actuellement étudiant en Master Design d’Interface Multimédia et Internet à l’université Sorbonne Paris Nord de Villetaneuse, je suis à la recherche d'un stage dans le domaine de l’UX/UI Design ou du développement informatique lié au multimédia. Vous trouverez sur ce portfolio certains de mes projets réalisés au cours de mes études.</p>
+                    <p style="color:rgb(245, 245, 245);">Actuellement étudiant en Master DIMI (Design d’Interface Multimédia et Internet) à l’université Sorbonne Paris Nord de Villetaneuse, je suis à la recherche d'un stage dans le domaine de l’UX/UI Design ou du développement informatique lié au multimédia. Vous trouverez sur ce portfolio certains de mes projets réalisés au cours de mes études.</p>
                 </div>
-                <img src="images/profil.jpg" alt="Photo de profil" id="PhotoProfil" class="rounded">
+                <img src="images/profil.png" alt="Photo de profil" id="PhotoProfil" class="rounded">
             </div>
         </div>
         
         <div style="padding-top: 3em; background-color:white" id="competences">
             <h2 class="titreContour" style="padding-bottom: 0.5em;">mes compétences</h2>
             <table id="tableComp">
+                <tr>
+                    <td><img src="/images/UxDesign.png"></td>
+                    <td>
+                        <h3>UX Design</h3>
+                        <ul>
+                            <li>Conception de wireframes et prototypes avec <b>Figma</b> et <b>Adobe XD</b></li>
+                            <li>Maîtrise de méthodes UX de <b>recherche utilisateur</b></li>
+                            <li>Connaissance des normes d’accessibilité <b>W3C</b></li>
+                        </ul>
+                    </td>
+                </tr>
                 <tr>
                     <td><img src="/images/DevWeb.png"></td>
                     <td>
@@ -107,17 +118,7 @@
                         </ul>
                     </td>
                 </tr>
-                <tr>
-                    <td><img src="/images/UxDesign.png"></td>
-                    <td>
-                        <h3>UX Design</h3>
-                        <ul>
-                            <li>Création de maquettes avec <b>Adobe XD</b> et <b>Figma</b></li>
-                            <li>Connaissance des normes d’accessibilité <b>W3C</b></li>
-                            <li>Rédaction web et <b>SEO</b></li>
-                        </ul>
-                    </td>
-                </tr>
+                
                 <tr>
                     <td><img src="/images/CreatArt.png"></td>
                     <td>
@@ -136,8 +137,64 @@
         </div>
         <div id="projets">
             <h2 id="projetsTitre" class="mx-auto my-3 titreContour">mes projets</h2>
-            <div id="project1" class="projectImg P1 P1first">
+            <div id="project8" class="projectImg P1 P1first">
                 <div class="nextProject" style="color: aliceblue; font-size: 2em; margin-right: 0.5em; float: right;">X</div>
+                <div class="slide">
+                    <img src="images/LogoEneville.png" alt="logo eneville" style="width: 40em; margin-bottom: 1em;">
+                    <div class="categories">
+                        <p class="text-purple">
+                        UX DESIGN &nbsp   
+                        </p>
+                    </div>
+                    <button type="button" class="btn btn-lg">
+                    Détails 
+                    </button>
+                    <div class="background-image bg-eneville"></div>
+                    <div class="overlay"></div>
+                </div>
+                <div class="details d-none" id="detailsMP">
+                    <h3 class="text-purple">Contexte</h3>
+                    <p>
+                        Dans le cadre de mon master DIMI, nous avons été amenés à participer à un “hackathon” de design où plusieurs entreprises étaient conviées afin de proposer un projet ou soumettre une problématique à laquelle nous devions répondre par groupe de cinq en une semaine.
+                    </p>
+                    <h3 class="text-purple">La demande</h3>
+                    <p> 
+                        L’entreprise rattachée à notre groupe était Eneville, une entreprise proposant des données et des       stratégies de décarbonisation à destination des acteurs du domaine de la rénovation énergétique immobilière. <br>
+                        Leur demande portait sur la création d'une nouvelle charte graphique, d'un nouveau parcours utilisateur pour leur site web ainsi que la création d'une interface pour une carte de prospection.
+                    </p>
+                    <h3 class="text-purple">Processus de travail</h3>
+                    <p>
+                        Afin de correctement analyser la demande nous avons tout d'abord échangé avec l’entreprise lors d’une première réunion. Cela nous a été utile afin de préciser les éléments du parcours utilisateur à modifier ainsi que les données à intégrer dans l'interface de la carte.
+                        <br><br>
+                        Une fois les demandes bien comprises par notre groupe, nous nous sommes répartis les tâches de benchmark et de création de personas. Ces étapes nous ont permis de nous assurer que nos productions seraient cohérentes avec le secteur et les cibles visées. <br>
+                        Je me suis personnellement occupé du benchmark pour la carte interactive de prospection.
+                        <br><br>
+                        Nous nous sommes ensuite réunis pour réfléchir au Userflow du site web et à l’intégration du nouvel outil de carte interactive dans celui-ci. À l’aide de post-it, nous avons réfléchi sur l’agencement des pages et des actions de l’utilisateur. Nous avons également réfléchi à la disposition de l’interface de la carte interactive en nous basant sur les données fournies par l’entreprise.
+                        <br><br></p>
+                        <figure class="figure item text-center">
+                            <img src="images/eneville4.png" class="figure-img img-fluid rounded mx-auto" alt="Page d'accueil du prototype du site">
+                            <figcaption class="figure-caption">Maquette de l'interface de la carte interactive</figcaption>
+                        </figure>
+                        <p>
+                        Après une réunion avec l'entreprise pour valider notre Userflow, nous nous sommes répartis les tâches pour la phase de maquettage. <br>
+                        Certains membres de mon groupe se sont chargés du logo et de la charte graphique, tandis qu'avec un autre membre de mon groupe je me suis occupé de la création de la maquette du site web.
+                        <br><br>
+                        Nous avons ensuite eu une réunion avec l’entreprise afin de leur proposer plusieurs logos et de valider  la maquette du site.
+                        <br>
+                        Une fois ces éléments validés, nous avons pu passer au maquettage et au prototypage de la carte interactive, tout en finalisant la maquette du site.
+                        </p>
+                        <figure class="figure item text-center">
+                            <img src="images/eneville3.png" class="figure-img img-fluid rounded mx-auto" alt="Page d'accueil du prototype du site">
+                            <figcaption class="figure-caption">Page d'accueil de l'espace client ajouté à la suite du nouvel Userflow</figcaption>
+                        </figure>
+                        <p>
+                       
+                        </p>
+                    <div class="returnArrow">Haut de la page</div>
+                </div>
+            </div>
+            <div id="project1" class="projectImg">
+                <div class="nextProject hidden" style="color: aliceblue; font-size: 2em; margin-right: 0.5em; float: right;">X</div>
                 <div class="slide">
                     <h2>MONO-PIANO</h2>
                     <div class="categories">
@@ -426,7 +483,7 @@
                     <div class="returnArrow">Haut de la page</div>
                 </div>
             </div>
-            <div id="project5" class="projectImg">
+            <div id="project5" class="projectImg moveOut">
                 <div class="nextProject hidden" style="color: aliceblue; font-size: 2em; margin-right: 0.5em; float: right;">X</div>
                 <div class="slide">
                     <img src="images/LogoToubo.png" alt="logo toubo" style="width: 25em; ">
