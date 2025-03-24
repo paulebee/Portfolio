@@ -75,7 +75,30 @@ html, body {
   z-index: 1;
   font-size: 1.25em;
   font-weight: 2em;
+  padding: 0;
+  gap: 5px;
 }
+
+.categories .text-purple {
+  background-color: rgb(244, 195, 254);
+  padding-inline: 5px;
+}
+
+.categories .text-blue {
+  background-color: rgb(196, 192, 246);
+  padding-inline: 5px;
+}
+
+.categories .text-red {
+  background-color: rgb(255, 188, 188);
+  padding-inline: 5px;
+}
+
+.categories .text-orange {
+  background-color: rgb(250, 233, 207);
+  padding-inline: 5px;
+}
+
 
 .slide img:hover {
     opacity: 0.9;
