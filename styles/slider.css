@@ -244,6 +244,13 @@ html, body {
   left: -300%;
 }
 
+.nextProject {
+  color: aliceblue;
+  font-size: 2em;
+  margin-right: 0.5em;
+  float: right;
+}
+
 .details {
   background: rgb(253,253,253);
   background: linear-gradient(104deg, rgba(253,253,253,1) 0%, rgba(255,255,255,1) 36%, rgba(250,250,250,1) 100%);
@@ -332,18 +339,32 @@ html, body {
   .projectImg {
     height: 40em;
   }
+
+  #detailsMP img {
+    width: 95%;
+  }
+
 }
 
 @media screen and (max-width: 890px){
-  #footer {
-    margin-top: 60em;
-  }
 
   .projectImg {
     height: 50em;
   }
   .slide {
     margin-top: 18em;
+  }
+
+  .slide .btn-lg {
+    font-size: 2em;
+  }
+
+  .nextProject {
+    font-size: 4em;
+  }
+
+  #projets {
+    margin-top: 5em;
   }
 }
 
@@ -369,9 +390,12 @@ html, body {
   .P5, .P6 {
     width: 60%;
   }
+  .details p, .details h3 {
+    padding-inline: 12px;
+  }
 }
 
-@media screen and (max-width: 570px) {
+@media screen and (max-width: 490px) {
   .slide-5 img{
     width: 25em;
   }
@@ -385,16 +409,8 @@ html, body {
     width: 95%;
   }
 
-  #detailsMP img {
-    width: 80%;
-  }
-
   .slide h2, .slideMini h2 {
     margin-bottom: 0;
-  }
-
-  #footer {
-    margin-top: 70em;
   }
 
   .projectImg {
