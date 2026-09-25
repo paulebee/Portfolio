@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     let footer = document.querySelector('footer');
 
-    let positions = ["P1", "P2", "P3", "P4", "P5","P6","P7", "P8"];
+    let positions = ["P1", "P2", "P3", "P4", "P5","P6","P7","P8"];
 
     let order= [1,2,3,4,5,6,7,8];
 
